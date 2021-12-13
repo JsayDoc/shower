@@ -1,13 +1,15 @@
 {
-  "name": "",
-  "version": "0.0.0",
-  "description": "",
-  "sampleUrl": false,
+  "name": "Shower",
+  "version": "1.0.0",
+  "description": "API документация",
+  "title": "Проект Shower",
+  "url": "https://shower-develop.herokuapp.com//api/v1/",
+  "sampleUrl": true,
   "defaultVersion": "0.0.0",
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2021-12-07T16:45:09.932Z",
+    "time": "2021-07-10T14:53:09.716Z",
     "url": "https://apidocjs.com",
     "version": "0.28.1"
   }
