@@ -1677,7 +1677,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "accounts/status_active/",
-    "title": "Статус и активность пользователя",
+    "title": "Статус пользователя",
     "success": {
       "examples": [
         {
