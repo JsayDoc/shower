@@ -1426,7 +1426,7 @@
   },
   {
     "type": "get",
-    "url": "/profile/reminder-weekday/",
+    "url": "profile/reminder-weekday/",
     "title": "Дни неделя для напоминания",
     "success": {
       "examples": [
@@ -1492,7 +1492,7 @@
   },
   {
     "type": "patch",
-    "url": "/profile/shower-reminder/",
+    "url": "profile/shower-reminder/",
     "title": "Назначить отдельные настройки напоминания",
     "success": {
       "examples": [
@@ -1551,7 +1551,7 @@
   },
   {
     "type": "put",
-    "url": "/profile/shower-reminder/",
+    "url": "profile/shower-reminder/",
     "title": "Назначить настройка напоминания",
     "success": {
       "examples": [
@@ -1610,7 +1610,7 @@
   },
   {
     "type": "put",
-    "url": "/profile/shower-settings/",
+    "url": "profile/shower-settings/",
     "title": "Назначить настройки душа",
     "success": {
       "examples": [
@@ -1697,7 +1697,7 @@
   },
   {
     "type": "patch",
-    "url": "/profile/shower-settings/",
+    "url": "profile/shower-settings/",
     "title": "Назначить отдельные настройки душа",
     "success": {
       "examples": [
@@ -1784,7 +1784,7 @@
   },
   {
     "type": "patch",
-    "url": "/profile/reminder-weekday/",
+    "url": "profile/reminder-weekday/",
     "title": "Дни неделя для напоминания",
     "success": {
       "examples": [
