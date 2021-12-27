@@ -1,166 +1,6 @@
 define({ "api": [
   {
     "type": "post",
-    "url": "accounts/status_active/",
-    "title": "Статус и активность пользователя",
-    "success": {
-      "examples": [
-        {
-          "title": "1.Success-Response:",
-          "content": "{\n    \"check_email\": false,\n    \"check_full_info\": false,\n}",
-          "type": "json"
-        },
-        {
-          "title": "2.Success-Response:",
-          "content": "{\n    \"check_email\": false,\n    \"check_full_info\": false,\n}",
-          "type": "json"
-        }
-      ],
-      "fields": {
-        "Response": [
-          {
-            "group": "Response",
-            "type": "Object",
-            "optional": false,
-            "field": "daily_water",
-            "description": "<p>Информация о выпитой воде</p>"
-          },
-          {
-            "group": "Response",
-            "type": "Number",
-            "optional": false,
-            "field": "daily_water.water_norm",
-            "description": "<p>Норма воды за день</p>"
-          },
-          {
-            "group": "Response",
-            "type": "Number",
-            "optional": false,
-            "field": "daily_water.drunk",
-            "description": "<p>Выпитая вода за день</p>"
-          },
-          {
-            "group": "Response",
-            "type": "Number",
-            "optional": false,
-            "field": "daily_water.percent",
-            "description": "<p>Процент выпитой воды за день</p>"
-          },
-          {
-            "group": "Response",
-            "type": "Object",
-            "optional": false,
-            "field": "daily_active",
-            "description": "<p>Достижение активности</p>"
-          },
-          {
-            "group": "Response",
-            "type": "Boolean",
-            "optional": false,
-            "field": "daily_active.notify",
-            "description": "<p>Поздравить <code>True</code> - да, <code>False</code> - нет</p>"
-          },
-          {
-            "group": "Response",
-            "type": "Number",
-            "optional": false,
-            "field": "daily_active.counter",
-            "description": "<p>Счетчик повторений</p>"
-          },
-          {
-            "group": "Response",
-            "type": "Number",
-            "optional": false,
-            "field": "daily_active.percent",
-            "description": "<p>Процент пользователей получивших достижение</p>"
-          },
-          {
-            "group": "Response",
-            "type": "String",
-            "optional": false,
-            "field": "daily_active.date",
-            "description": "<p>День достижения</p>"
-          },
-          {
-            "group": "Response",
-            "type": "Object",
-            "optional": false,
-            "field": "daily_active.award",
-            "description": "<p>Достижение</p>"
-          },
-          {
-            "group": "Response",
-            "type": "String",
-            "optional": false,
-            "field": "daily_active.award.title",
-            "description": "<p>Название достижения</p>"
-          },
-          {
-            "group": "Response",
-            "type": "String",
-            "optional": false,
-            "field": "daily_active.award.text",
-            "description": "<p>Текст поздравления</p>"
-          },
-          {
-            "group": "Response",
-            "type": "String",
-            "optional": false,
-            "field": "daily_active.award.photo_code",
-            "description": "<p>Код миниатюры</p>"
-          },
-          {
-            "group": "Response",
-            "type": "Boolean",
-            "optional": false,
-            "field": "check_email",
-            "description": "<p>Статус почты <code>True</code> - необходима проверка, <code>False</code> - проверка не требуется</p>"
-          },
-          {
-            "group": "Response",
-            "type": "Boolean",
-            "optional": false,
-            "field": "check_full_info",
-            "description": "<p>Статус данных пользователя <code>True</code> - необходима проверка, <code>False</code> - проверка не требуется</p>"
-          },
-          {
-            "group": "Response",
-            "type": "Object[]",
-            "optional": false,
-            "field": "bottles",
-            "description": "<p>Бутылки пользователя</p>"
-          }
-        ]
-      }
-    },
-    "version": "1.0.0",
-    "header": {
-      "fields": {
-        "Header": [
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "Authorization",
-            "description": "<p>User Bearer Token.</p>"
-          }
-        ]
-      }
-    },
-    "permission": [
-      {
-        "name": "User",
-        "title": "User access rights needed.",
-        "description": "<p>Permission is granted to modify user objects.</p>"
-      }
-    ],
-    "name": "status_active",
-    "group": "Активность_и_статус",
-    "filename": "shower-develop/apps/account/rest/v1/api.py",
-    "groupTitle": "Активность_и_статус"
-  },
-  {
-    "type": "post",
     "url": "accounts/auth/",
     "title": "Авторизация через почту",
     "success": {
@@ -705,17 +545,63 @@ define({ "api": [
     "groupTitle": "Напоминания"
   },
   {
-    "type": "put",
-    "url": "/notifications/notification/",
-    "title": "Назначить отдельные настройки напоминания",
+    "type": "get",
+    "url": "notifications/notification/",
+    "title": "Получить настройки напоминания",
     "success": {
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"notification_days\": [\n        {\n            \"weekday\": 1,\n            \"remind_time\": \"14:00:00\",\n            \"remind\": false\n        },\n        ...\n        {\n            \"weekday\": 7,\n            \"remind_time\": \"09:00:00\",\n            \"remind\": true\n        }\n    ],\n    \"remind\": false,\n    \"sound\": true\n}",
+          "content": "{\n    \"notification_days\": [\n        {\n            \"weekday\": 1,\n            \"remind_time\": \"13:00:00\",\n            \"remind\": true\n        },\n        ...\n        {\n            \"weekday\": 7,\n            \"remind_time\": \"09:00:00\",\n            \"remind\": true\n        }\n    ],\n    \"remind\": true,\n    \"sound\": true\n}",
           "type": "json"
         }
-      ]
+      ],
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "Object[]",
+            "optional": false,
+            "field": "notification_days",
+            "description": "<p>Дни недели напоминания</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Number",
+            "optional": false,
+            "field": "notification_days.weekday",
+            "description": "<p>День недели</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "notification_days.remind_time",
+            "description": "<p>Время</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "notification_days.remind",
+            "description": "<p>Напоминать <code>True</code> - Да, <code>False</code> - Нет</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "remind",
+            "description": "<p>Глобальные настройки напоминания <code>True</code> - Да, <code>False</code> - Нет</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "sound",
+            "description": "<p>Звук напоминания <code>True</code> - Да, <code>False</code> - Нет</p>"
+          }
+        ]
+      }
     },
     "version": "1.0.0",
     "header": {
@@ -738,35 +624,15 @@ define({ "api": [
         "description": "<p>Permission is granted to modify user objects.</p>"
       }
     ],
-    "name": "notification_full_update",
+    "name": "get_notification",
     "group": "Напоминания",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Boolean",
-            "optional": true,
-            "field": "remind",
-            "description": "<p>Напоминать, <code>True</code> - включен, <code>False</code> - отключен</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Boolean",
-            "optional": true,
-            "field": "sound",
-            "description": "<p>Звук, <code>True</code> - включен, <code>False</code> - отключен</p>"
-          }
-        ]
-      }
-    },
     "filename": "shower-develop/apps/notification/rest/v1/api.py",
     "groupTitle": "Напоминания"
   },
   {
     "type": "patch",
-    "url": "/notifications/notification/",
-    "title": "Назначить отдельные настройки напоминания",
+    "url": "notifications/notification/",
+    "title": "Обновление глобальных настроек напоминания",
     "success": {
       "examples": [
         {
@@ -824,8 +690,8 @@ define({ "api": [
   },
   {
     "type": "patch",
-    "url": "/notifications/notification-day/",
-    "title": "Дни неделя для напоминания",
+    "url": "notifications/notification-day/",
+    "title": "Обновление дня недели напоминания",
     "success": {
       "examples": [
         {
@@ -881,6 +747,141 @@ define({ "api": [
             "optional": true,
             "field": "remind",
             "description": "<p>Напоминать, <code>True</code> - включен, <code>False</code> - отключен</p>"
+          }
+        ]
+      }
+    },
+    "filename": "shower-develop/apps/notification/rest/v1/api.py",
+    "groupTitle": "Напоминания"
+  },
+  {
+    "type": "put",
+    "url": "notifications/notification/",
+    "title": "Обновление настроек напоминания",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"notification_days\": [\n        {\n            \"weekday\": 1,\n            \"remind_time\": \"14:00:00\",\n            \"remind\": false\n        },\n        ...\n        {\n            \"weekday\": 7,\n            \"remind_time\": \"09:00:00\",\n            \"remind\": true\n        }\n    ],\n    \"remind\": false,\n    \"sound\": true\n}",
+          "type": "json"
+        }
+      ],
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "Object[]",
+            "optional": false,
+            "field": "notification_days",
+            "description": "<p>Дни недели напоминания</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Number",
+            "optional": false,
+            "field": "notification_days.weekday",
+            "description": "<p>День недели</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "notification_days.remind_time",
+            "description": "<p>Время</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "notification_days.remind",
+            "description": "<p>Напоминать <code>True</code> - Да, <code>False</code> - Нет</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "remind",
+            "description": "<p>Глобальные настройки напоминания <code>True</code> - Да, <code>False</code> - Нет</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "sound",
+            "description": "<p>Звук напоминания <code>True</code> - Да, <code>False</code> - Нет</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>User Bearer Token.</p>"
+          }
+        ]
+      }
+    },
+    "permission": [
+      {
+        "name": "User",
+        "title": "User access rights needed.",
+        "description": "<p>Permission is granted to modify user objects.</p>"
+      }
+    ],
+    "name": "put_notification",
+    "group": "Напоминания",
+    "parameter": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "Object[]",
+            "optional": false,
+            "field": "notification_days",
+            "description": "<p>Дни недели напоминания</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Number",
+            "optional": false,
+            "field": "notification_days.weekday",
+            "description": "<p>День недели</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "notification_days.remind_time",
+            "description": "<p>Время</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "notification_days.remind",
+            "description": "<p>Напоминать <code>True</code> - Да, <code>False</code> - Нет</p>"
+          }
+        ],
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Boolean",
+            "optional": true,
+            "field": "remind",
+            "description": "<p>Напоминать, <code>True</code> - включен, <code>False</code> - отключен</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Boolean",
+            "optional": true,
+            "field": "sound",
+            "description": "<p>Звук, <code>True</code> - включен, <code>False</code> - отключен</p>"
           }
         ]
       }
@@ -1610,13 +1611,98 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/notifications/notification/",
-    "title": "Назначить настройки напоминания",
+    "url": "profile/shower-settings/",
+    "title": "Получить настройки душа",
     "success": {
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"notification_days\": [\n        {\n            \"weekday\": 1,\n            \"remind_time\": \"13:00:00\",\n            \"remind\": true\n        },\n        ...\n        {\n            \"weekday\": 7,\n            \"remind_time\": \"09:00:00\",\n            \"remind\": true\n        }\n    ],\n    \"remind\": true,\n    \"sound\": true\n}",
+          "content": "{\n    \"bask_before_shower\": 60,\n    \"cold_shower\": 10,\n    \"warm_shower\": 30,\n    \"approaches_in_one_shower\": 2,\n    \"voice_prompt\": true,\n    \"voice_type\": \"WOMANISH\"\n}",
+          "type": "json"
+        }
+      ],
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "Number",
+            "optional": false,
+            "field": "bask_before_shower",
+            "description": "<p>Время в душе</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Number",
+            "optional": false,
+            "field": "cold_shower",
+            "description": "<p>Холодный душ</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Number",
+            "optional": false,
+            "field": "warm_shower",
+            "description": "<p>Теплый душ</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Number",
+            "optional": false,
+            "field": "approaches_in_one_shower",
+            "description": "<p>Подходы</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "voice_prompt",
+            "description": "<p>Звук подсказки, <code>True</code> - включен, <code>False</code> - отключен</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "voice_type",
+            "description": "<p>Тип голоса, <code>WOMANISH</code> - Женский, <code>MASCULINE</code> - Мужской</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>User Bearer Token.</p>"
+          }
+        ]
+      }
+    },
+    "permission": [
+      {
+        "name": "User",
+        "title": "User access rights needed.",
+        "description": "<p>Permission is granted to modify user objects.</p>"
+      }
+    ],
+    "name": "get_shower_settings",
+    "group": "Профиль",
+    "filename": "shower-develop/apps/uprofile/rest/v1/api.py",
+    "groupTitle": "Профиль"
+  },
+  {
+    "type": "patch",
+    "url": "profile/shower-settings/",
+    "title": "Обновление настроек душа",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"bask_before_shower\": 50,\n    \"cold_shower\": 15,\n}",
           "type": "json"
         }
       ]
@@ -1642,34 +1728,62 @@ define({ "api": [
         "description": "<p>Permission is granted to modify user objects.</p>"
       }
     ],
-    "name": "notification",
+    "name": "patch_shower_settings",
     "group": "Профиль",
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Boolean",
+            "type": "Number",
             "optional": true,
-            "field": "remind",
-            "description": "<p>Напоминать, <code>True</code> - включен, <code>False</code> - отключен</p>"
+            "field": "bask_before_shower",
+            "description": "<p>Время в душе</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "cold_shower",
+            "description": "<p>Холодный душ</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "warm_shower",
+            "description": "<p>Теплый душ</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "approaches_in_one_shower",
+            "description": "<p>Подходы</p>"
           },
           {
             "group": "Parameter",
             "type": "Boolean",
             "optional": true,
-            "field": "sound",
-            "description": "<p>Звук, <code>True</code> - включен, <code>False</code> - отключен</p>"
+            "field": "voice_prompt",
+            "description": "<p>Звук подсказки, <code>True</code> - включен, <code>False</code> - отключен</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "voice_type",
+            "description": "<p>Тип голоса, <code>WOMANISH</code> - Женский, <code>MASCULINE</code> - Мужской</p>"
           }
         ]
       }
     },
-    "filename": "shower-develop/apps/notification/rest/v1/api.py",
+    "filename": "shower-develop/apps/uprofile/rest/v1/api.py",
     "groupTitle": "Профиль"
   },
   {
     "type": "put",
-    "url": "/profile/shower-settings/",
+    "url": "profile/shower-settings/",
     "title": "Назначить настройки душа",
     "success": {
       "examples": [
@@ -1701,7 +1815,7 @@ define({ "api": [
         "description": "<p>Permission is granted to modify user objects.</p>"
       }
     ],
-    "name": "set_shower_settings",
+    "name": "put_shower_settings",
     "group": "Профиль",
     "parameter": {
       "fields": {
@@ -1711,7 +1825,7 @@ define({ "api": [
             "type": "Integer",
             "optional": true,
             "field": "bask_before_shower",
-            "description": "<p>Греться перед душем</p>"
+            "description": "<p>Время в душе</p>"
           },
           {
             "group": "Parameter",
@@ -1732,7 +1846,7 @@ define({ "api": [
             "type": "Integer",
             "optional": true,
             "field": "approaches_in_one_shower",
-            "description": "<p>Подходит в один душ</p>"
+            "description": "<p>Подходы</p>"
           },
           {
             "group": "Parameter",
@@ -1746,7 +1860,7 @@ define({ "api": [
             "type": "String",
             "optional": true,
             "field": "voice_type",
-            "description": "<p>Тип голоса</p>"
+            "description": "<p>Тип голоса, <code>WOMANISH</code> - Женский, <code>MASCULINE</code> - Мужской</p>"
           }
         ]
       }
@@ -1755,17 +1869,35 @@ define({ "api": [
     "groupTitle": "Профиль"
   },
   {
-    "type": "patch",
-    "url": "/profile/shower-settings/",
-    "title": "Назначить отдельные настройки душа",
+    "type": "post",
+    "url": "accounts/status_active/",
+    "title": "Статус пользователя",
     "success": {
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"bask_before_shower\": 50,\n    \"cold_shower\": 15,\n}",
+          "content": "{\n    \"check_email\": false,\n    \"check_full_info\": false,\n}",
           "type": "json"
         }
-      ]
+      ],
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "check_email",
+            "description": "<p>Статус почты <code>True</code> - необходима проверка, <code>False</code> - проверка не требуется</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "check_full_info",
+            "description": "<p>Статус данных пользователя <code>True</code> - необходима проверка, <code>False</code> - проверка не требуется</p>"
+          }
+        ]
+      }
     },
     "version": "1.0.0",
     "header": {
@@ -1788,57 +1920,9 @@ define({ "api": [
         "description": "<p>Permission is granted to modify user objects.</p>"
       }
     ],
-    "name": "set_shower_settings",
-    "group": "Профиль",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Integer",
-            "optional": true,
-            "field": "bask_before_shower",
-            "description": "<p>Греться перед душем</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Integer",
-            "optional": true,
-            "field": "cold_shower",
-            "description": "<p>Холодный душ</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Integer",
-            "optional": true,
-            "field": "warm_shower",
-            "description": "<p>Теплый душ</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Integer",
-            "optional": true,
-            "field": "approaches_in_one_shower",
-            "description": "<p>Подходит в один душ</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Boolean",
-            "optional": true,
-            "field": "voice_prompt",
-            "description": "<p>Звук подсказки, <code>True</code> - включен, <code>False</code> - отключен</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": true,
-            "field": "voice_type",
-            "description": "<p>Тип голоса</p>"
-          }
-        ]
-      }
-    },
-    "filename": "shower-develop/apps/uprofile/rest/v1/api.py",
-    "groupTitle": "Профиль"
+    "name": "user_status",
+    "group": "Статус",
+    "filename": "shower-develop/apps/account/rest/v1/api.py",
+    "groupTitle": "Статус"
   }
 ] });
