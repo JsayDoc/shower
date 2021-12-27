@@ -1,6 +1,166 @@
 define({ "api": [
   {
     "type": "post",
+    "url": "accounts/status_active/",
+    "title": "Статус и активность пользователя",
+    "success": {
+      "examples": [
+        {
+          "title": "1.Success-Response:",
+          "content": "{\n    \"check_email\": false,\n    \"check_full_info\": false,\n}",
+          "type": "json"
+        },
+        {
+          "title": "2.Success-Response:",
+          "content": "{\n    \"check_email\": false,\n    \"check_full_info\": false,\n}",
+          "type": "json"
+        }
+      ],
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "Object",
+            "optional": false,
+            "field": "daily_water",
+            "description": "<p>Информация о выпитой воде</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Number",
+            "optional": false,
+            "field": "daily_water.water_norm",
+            "description": "<p>Норма воды за день</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Number",
+            "optional": false,
+            "field": "daily_water.drunk",
+            "description": "<p>Выпитая вода за день</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Number",
+            "optional": false,
+            "field": "daily_water.percent",
+            "description": "<p>Процент выпитой воды за день</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Object",
+            "optional": false,
+            "field": "daily_active",
+            "description": "<p>Достижение активности</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "daily_active.notify",
+            "description": "<p>Поздравить <code>True</code> - да, <code>False</code> - нет</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Number",
+            "optional": false,
+            "field": "daily_active.counter",
+            "description": "<p>Счетчик повторений</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Number",
+            "optional": false,
+            "field": "daily_active.percent",
+            "description": "<p>Процент пользователей получивших достижение</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "daily_active.date",
+            "description": "<p>День достижения</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Object",
+            "optional": false,
+            "field": "daily_active.award",
+            "description": "<p>Достижение</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "daily_active.award.title",
+            "description": "<p>Название достижения</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "daily_active.award.text",
+            "description": "<p>Текст поздравления</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "daily_active.award.photo_code",
+            "description": "<p>Код миниатюры</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "check_email",
+            "description": "<p>Статус почты <code>True</code> - необходима проверка, <code>False</code> - проверка не требуется</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "check_full_info",
+            "description": "<p>Статус данных пользователя <code>True</code> - необходима проверка, <code>False</code> - проверка не требуется</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Object[]",
+            "optional": false,
+            "field": "bottles",
+            "description": "<p>Бутылки пользователя</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>User Bearer Token.</p>"
+          }
+        ]
+      }
+    },
+    "permission": [
+      {
+        "name": "User",
+        "title": "User access rights needed.",
+        "description": "<p>Permission is granted to modify user objects.</p>"
+      }
+    ],
+    "name": "status_active",
+    "group": "Активность_и_статус",
+    "filename": "shower-develop/apps/account/rest/v1/api.py",
+    "groupTitle": "Активность_и_статус"
+  },
+  {
+    "type": "post",
     "url": "accounts/auth/",
     "title": "Авторизация через почту",
     "success": {
@@ -465,6 +625,268 @@ define({ "api": [
     },
     "filename": "shower-develop/apps/account/rest/v1/urls.py",
     "groupTitle": "Аутентификация"
+  },
+  {
+    "type": "post",
+    "url": "notification/fcm_token/",
+    "title": "FCM Token",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"registration_id\": \"UID090974679\",\n    \"device_id\": \"f6e47bd0-e019-11eb-ba80-0242ac130004\",\n    \"device\": \"ios\",\n    \"login\": true\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>User Bearer Token.</p>"
+          }
+        ]
+      }
+    },
+    "permission": [
+      {
+        "name": "User",
+        "title": "User access rights needed.",
+        "description": "<p>Permission is granted to modify user objects.</p>"
+      }
+    ],
+    "name": "fcm_token",
+    "group": "Напоминания",
+    "description": "<p>Создание FirebaseToken для отправки PUSH уведомлений</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "registration_id",
+            "description": "<p>FirebaseToken</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "device_id",
+            "description": "<p>ID устройства</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "ios",
+              "android"
+            ],
+            "optional": false,
+            "field": "device",
+            "description": "<p>Тип устройства</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Boolean",
+            "optional": false,
+            "field": "login",
+            "description": "<p>Статус авторизации пользователя в системе, <code>True</code> - вход, <code>False</code> - выход</p>"
+          }
+        ]
+      }
+    },
+    "filename": "shower-develop/apps/notification/rest/v1/api.py",
+    "groupTitle": "Напоминания"
+  },
+  {
+    "type": "put",
+    "url": "/notifications/notification/",
+    "title": "Назначить отдельные настройки напоминания",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"notification_days\": [\n        {\n            \"weekday\": 1,\n            \"remind_time\": \"14:00:00\",\n            \"remind\": false\n        },\n        ...\n        {\n            \"weekday\": 7,\n            \"remind_time\": \"09:00:00\",\n            \"remind\": true\n        }\n    ],\n    \"remind\": false,\n    \"sound\": true\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>User Bearer Token.</p>"
+          }
+        ]
+      }
+    },
+    "permission": [
+      {
+        "name": "User",
+        "title": "User access rights needed.",
+        "description": "<p>Permission is granted to modify user objects.</p>"
+      }
+    ],
+    "name": "notification_full_update",
+    "group": "Напоминания",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Boolean",
+            "optional": true,
+            "field": "remind",
+            "description": "<p>Напоминать, <code>True</code> - включен, <code>False</code> - отключен</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Boolean",
+            "optional": true,
+            "field": "sound",
+            "description": "<p>Звук, <code>True</code> - включен, <code>False</code> - отключен</p>"
+          }
+        ]
+      }
+    },
+    "filename": "shower-develop/apps/notification/rest/v1/api.py",
+    "groupTitle": "Напоминания"
+  },
+  {
+    "type": "patch",
+    "url": "/notifications/notification/",
+    "title": "Назначить отдельные настройки напоминания",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"remind\": true,\n    \"sound\": true\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>User Bearer Token.</p>"
+          }
+        ]
+      }
+    },
+    "permission": [
+      {
+        "name": "User",
+        "title": "User access rights needed.",
+        "description": "<p>Permission is granted to modify user objects.</p>"
+      }
+    ],
+    "name": "notification_partial_update",
+    "group": "Напоминания",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Boolean",
+            "optional": true,
+            "field": "remind",
+            "description": "<p>Напоминать, <code>True</code> - включен, <code>False</code> - отключен</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Boolean",
+            "optional": true,
+            "field": "sound",
+            "description": "<p>Звук, <code>True</code> - включен, <code>False</code> - отключен</p>"
+          }
+        ]
+      }
+    },
+    "filename": "shower-develop/apps/notification/rest/v1/api.py",
+    "groupTitle": "Напоминания"
+  },
+  {
+    "type": "patch",
+    "url": "/notifications/notification-day/",
+    "title": "Дни неделя для напоминания",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"weekday\": 1,\n    \"remind_time\": \"09:00\",\n    \"remind\": true\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>User Bearer Token.</p>"
+          }
+        ]
+      }
+    },
+    "permission": [
+      {
+        "name": "User",
+        "title": "User access rights needed.",
+        "description": "<p>Permission is granted to modify user objects.</p>"
+      }
+    ],
+    "name": "notification_weekday",
+    "group": "Напоминания",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": true,
+            "field": "weekday",
+            "description": "<p>День недели</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Time",
+            "optional": true,
+            "field": "remind_time",
+            "description": "<p>Время напоминания</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Boolean",
+            "optional": true,
+            "field": "remind",
+            "description": "<p>Напоминать, <code>True</code> - включен, <code>False</code> - отключен</p>"
+          }
+        ]
+      }
+    },
+    "filename": "shower-develop/apps/notification/rest/v1/api.py",
+    "groupTitle": "Напоминания"
   },
   {
     "type": "get",
@@ -1187,14 +1609,14 @@ define({ "api": [
     "groupTitle": "Пользователь"
   },
   {
-    "type": "post",
-    "url": "notification/fcm_token/",
-    "title": "FCM Token",
+    "type": "get",
+    "url": "/notifications/notification/",
+    "title": "Назначить настройки напоминания",
     "success": {
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"registration_id\": \"UID090974679\",\n    \"device_id\": \"f6e47bd0-e019-11eb-ba80-0242ac130004\",\n    \"device\": \"ios\",\n    \"login\": true\n}",
+          "content": "{\n    \"notification_days\": [\n        {\n            \"weekday\": 1,\n            \"remind_time\": \"13:00:00\",\n            \"remind\": true\n        },\n        ...\n        {\n            \"weekday\": 7,\n            \"remind_time\": \"09:00:00\",\n            \"remind\": true\n        }\n    ],\n    \"remind\": true,\n    \"sound\": true\n}",
           "type": "json"
         }
       ]
@@ -1220,43 +1642,24 @@ define({ "api": [
         "description": "<p>Permission is granted to modify user objects.</p>"
       }
     ],
-    "name": "fcm_token",
+    "name": "notification",
     "group": "Профиль",
-    "description": "<p>Создание FirebaseToken для отправки PUSH уведомлений</p>",
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "registration_id",
-            "description": "<p>FirebaseToken</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "device_id",
-            "description": "<p>ID устройства</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "allowedValues": [
-              "ios",
-              "android"
-            ],
-            "optional": false,
-            "field": "device",
-            "description": "<p>Тип устройства</p>"
+            "type": "Boolean",
+            "optional": true,
+            "field": "remind",
+            "description": "<p>Напоминать, <code>True</code> - включен, <code>False</code> - отключен</p>"
           },
           {
             "group": "Parameter",
             "type": "Boolean",
-            "optional": false,
-            "field": "login",
-            "description": "<p>Статус авторизации пользователя в системе, <code>True</code> - вход, <code>False</code> - выход</p>"
+            "optional": true,
+            "field": "sound",
+            "description": "<p>Звук, <code>True</code> - включен, <code>False</code> - отключен</p>"
           }
         ]
       }
@@ -1265,192 +1668,8 @@ define({ "api": [
     "groupTitle": "Профиль"
   },
   {
-    "type": "get",
-    "url": "profile/reminder-weekday/",
-    "title": "Дни неделя для напоминания",
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "{\n    \"weekday\": 1,\n    \"remind_time\": \"09:00\",\n    \"remind\": true\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "1.0.0",
-    "header": {
-      "fields": {
-        "Header": [
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "Authorization",
-            "description": "<p>User Bearer Token.</p>"
-          }
-        ]
-      }
-    },
-    "permission": [
-      {
-        "name": "User",
-        "title": "User access rights needed.",
-        "description": "<p>Permission is granted to modify user objects.</p>"
-      }
-    ],
-    "name": "get_reminder",
-    "group": "Профиль",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Integer",
-            "optional": true,
-            "field": "weekday",
-            "description": "<p>День недели</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Time",
-            "optional": true,
-            "field": "remind_time",
-            "description": "<p>Время напоминания</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Boolean",
-            "optional": true,
-            "field": "remind",
-            "description": "<p>Напоминать, <code>True</code> - включен, <code>False</code> - отключен</p>"
-          }
-        ]
-      }
-    },
-    "filename": "shower-develop/apps/uprofile/rest/v1/api.py",
-    "groupTitle": "Профиль"
-  },
-  {
-    "type": "patch",
-    "url": "profile/shower-reminder/",
-    "title": "Назначить отдельные настройки напоминания",
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "{\n    \"remind\": false\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "1.0.0",
-    "header": {
-      "fields": {
-        "Header": [
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "Authorization",
-            "description": "<p>User Bearer Token.</p>"
-          }
-        ]
-      }
-    },
-    "permission": [
-      {
-        "name": "User",
-        "title": "User access rights needed.",
-        "description": "<p>Permission is granted to modify user objects.</p>"
-      }
-    ],
-    "name": "patch_reminder",
-    "group": "Профиль",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Boolean",
-            "optional": true,
-            "field": "remind",
-            "description": "<p>Напоминать, <code>True</code> - включен, <code>False</code> - отключен</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Boolean",
-            "optional": true,
-            "field": "sound",
-            "description": "<p>Звук, <code>True</code> - включен, <code>False</code> - отключен</p>"
-          }
-        ]
-      }
-    },
-    "filename": "shower-develop/apps/uprofile/rest/v1/api.py",
-    "groupTitle": "Профиль"
-  },
-  {
     "type": "put",
-    "url": "profile/shower-reminder/",
-    "title": "Назначить настройка напоминания",
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "{\n    \"remind\": true\n    \"sound\": false\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "1.0.0",
-    "header": {
-      "fields": {
-        "Header": [
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "Authorization",
-            "description": "<p>User Bearer Token.</p>"
-          }
-        ]
-      }
-    },
-    "permission": [
-      {
-        "name": "User",
-        "title": "User access rights needed.",
-        "description": "<p>Permission is granted to modify user objects.</p>"
-      }
-    ],
-    "name": "put_reminder",
-    "group": "Профиль",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Boolean",
-            "optional": true,
-            "field": "remind",
-            "description": "<p>Напоминать, <code>True</code> - включен, <code>False</code> - отключен</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Boolean",
-            "optional": true,
-            "field": "sound",
-            "description": "<p>Звук, <code>True</code> - включен, <code>False</code> - отключен</p>"
-          }
-        ]
-      }
-    },
-    "filename": "shower-develop/apps/uprofile/rest/v1/api.py",
-    "groupTitle": "Профиль"
-  },
-  {
-    "type": "put",
-    "url": "profile/shower-settings/",
+    "url": "/profile/shower-settings/",
     "title": "Назначить настройки душа",
     "success": {
       "examples": [
@@ -1537,7 +1756,7 @@ define({ "api": [
   },
   {
     "type": "patch",
-    "url": "profile/shower-settings/",
+    "url": "/profile/shower-settings/",
     "title": "Назначить отдельные настройки душа",
     "success": {
       "examples": [
@@ -1621,114 +1840,5 @@ define({ "api": [
     },
     "filename": "shower-develop/apps/uprofile/rest/v1/api.py",
     "groupTitle": "Профиль"
-  },
-  {
-    "type": "patch",
-    "url": "profile/reminder-weekday/",
-    "title": "Дни неделя для напоминания",
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "{\n    \"remind_time\": \"09:30\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "1.0.0",
-    "header": {
-      "fields": {
-        "Header": [
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "Authorization",
-            "description": "<p>User Bearer Token.</p>"
-          }
-        ]
-      }
-    },
-    "permission": [
-      {
-        "name": "User",
-        "title": "User access rights needed.",
-        "description": "<p>Permission is granted to modify user objects.</p>"
-      }
-    ],
-    "name": "update_reminder",
-    "group": "Профиль",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Time",
-            "optional": true,
-            "field": "remind_time",
-            "description": "<p>Время напоминания</p>"
-          }
-        ]
-      }
-    },
-    "filename": "shower-develop/apps/uprofile/rest/v1/api.py",
-    "groupTitle": "Профиль"
-  },
-  {
-    "type": "post",
-    "url": "accounts/status_active/",
-    "title": "Статус пользователя",
-    "success": {
-      "examples": [
-        {
-          "title": "1.Success-Response:",
-          "content": "{\n    \"check_email\": false,\n    \"check_full_info\": false,\n}",
-          "type": "json"
-        }
-      ],
-      "fields": {
-        "Response": [
-          {
-            "group": "Response",
-            "type": "Boolean",
-            "optional": false,
-            "field": "check_email",
-            "description": "<p>Статус почты <code>True</code> - необходима проверка, <code>False</code> - проверка не требуется</p>"
-          },
-          {
-            "group": "Response",
-            "type": "Boolean",
-            "optional": false,
-            "field": "check_full_info",
-            "description": "<p>Статус данных пользователя <code>True</code> - необходима проверка, <code>False</code> - проверка не требуется</p>"
-          }
-        ]
-      }
-    },
-    "version": "1.0.0",
-    "header": {
-      "fields": {
-        "Header": [
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "Authorization",
-            "description": "<p>User Bearer Token.</p>"
-          }
-        ]
-      }
-    },
-    "permission": [
-      {
-        "name": "User",
-        "title": "User access rights needed.",
-        "description": "<p>Permission is granted to modify user objects.</p>"
-      }
-    ],
-    "name": "status_active",
-    "group": "Статус",
-    "filename": "shower-develop/apps/account/rest/v1/api.py",
-    "groupTitle": "Статус"
   }
 ] });
