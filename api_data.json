@@ -729,14 +729,14 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Integer",
+            "type": "Number",
             "optional": true,
             "field": "weekday",
             "description": "<p>День недели</p>"
           },
           {
             "group": "Parameter",
-            "type": "Time",
+            "type": "String",
             "optional": true,
             "field": "remind_time",
             "description": "<p>Время напоминания</p>"
@@ -838,37 +838,35 @@
     "group": "Напоминания",
     "parameter": {
       "fields": {
-        "Response": [
+        "Parameter": [
           {
-            "group": "Response",
+            "group": "Parameter",
             "type": "Object[]",
             "optional": false,
             "field": "notification_days",
             "description": "<p>Дни недели напоминания</p>"
           },
           {
-            "group": "Response",
+            "group": "Parameter",
             "type": "Number",
             "optional": false,
             "field": "notification_days.weekday",
             "description": "<p>День недели</p>"
           },
           {
-            "group": "Response",
+            "group": "Parameter",
             "type": "String",
             "optional": false,
             "field": "notification_days.remind_time",
             "description": "<p>Время</p>"
           },
           {
-            "group": "Response",
+            "group": "Parameter",
             "type": "Boolean",
             "optional": false,
             "field": "notification_days.remind",
             "description": "<p>Напоминать <code>True</code> - Да, <code>False</code> - Нет</p>"
-          }
-        ],
-        "Parameter": [
+          },
           {
             "group": "Parameter",
             "type": "Boolean",
@@ -1822,28 +1820,28 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Integer",
+            "type": "Number",
             "optional": true,
             "field": "bask_before_shower",
             "description": "<p>Время в душе</p>"
           },
           {
             "group": "Parameter",
-            "type": "Integer",
+            "type": "Number",
             "optional": true,
             "field": "cold_shower",
             "description": "<p>Холодный душ</p>"
           },
           {
             "group": "Parameter",
-            "type": "Integer",
+            "type": "Number",
             "optional": true,
             "field": "warm_shower",
             "description": "<p>Теплый душ</p>"
           },
           {
             "group": "Parameter",
-            "type": "Integer",
+            "type": "Number",
             "optional": true,
             "field": "approaches_in_one_shower",
             "description": "<p>Подходы</p>"
