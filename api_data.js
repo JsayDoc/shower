@@ -202,6 +202,14 @@ define({ "api": [
             "optional": false,
             "field": "first_name",
             "description": "<p>Имя пользователя</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Boolean",
+            "optional": true,
+            "field": "newsletters",
+            "defaultValue": "True",
+            "description": "<p>Подписка на новости</p>"
           }
         ]
       }
