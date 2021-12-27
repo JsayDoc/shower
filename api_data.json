@@ -407,6 +407,14 @@
             "optional": true,
             "field": "first_name",
             "description": "<p>Имя пользователя, обязательное поле если backend <code>apple-id</code></p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Boolean",
+            "optional": true,
+            "field": "newsletters",
+            "defaultValue": "True",
+            "description": "<p>Подписка на новости</p>"
           }
         ]
       }
@@ -1148,6 +1156,14 @@
             "optional": true,
             "field": "first_name",
             "description": "<p>Имя пользователя</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Boolean",
+            "optional": true,
+            "field": "newsletters",
+            "defaultValue": "True",
+            "description": "<p>Подписка на новости</p>"
           }
         ]
       }
