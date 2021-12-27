@@ -941,12 +941,12 @@ define({ "api": [
   {
     "type": "get",
     "url": "core/benefits/",
-    "title": "О пользе воды",
+    "title": "О пользе душа",
     "success": {
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "[\n    {\n        \"title\": \"Чувствуете, что с вами что-то не так?\",\n        \"text\": \"Не хватает воды в организме: она выводит токсины из почек и печени,\n        помогает усваиваться витаминам и минералам.\",\n        \"link\": \"https://www.nytimes.com/2000/07/11/health/personal-health.html\",\n        \"short_link\": \"https://nytimes.com\"\n    },\n    {\n        \"title\": \"Слабость и вялость?\",\n        \"text\": \"Кровь сгущается из-за обезвоживания — сердце напрягается — тело и мозг экономят энергию.\",\n        \"link\": \"https://www.nytimes.com/2000/07/11/health/personal-health-for-lifelong.html\",\n        \"short_link\": \"https://nytimes.com\"\n    }\n]",
+          "content": "[\n    {\n        \"title\": \"Укрепление иммунитета\",\n        \"text\": \"Принятие контрастного душа делает человека выносливее и улучшает его врожденный иммунитет.\",\n        \"link\": \"https://www.championat.com/lifestyle/article-4027747-chem-polezen-holodnyj-dush-pohudenie-vosstanovlenie-myshc-ukreplenie-immuniteta.html\",\n        \"short_link\": \"www.championat.com\"\n    },\n    {\n        \"title\": \"Тренировка терморегуляции\",\n        \"text\": \"Под горячей водой гормоны расширяют кровеносные и лимфатические сосуды.\",\n        \"link\": \"https://www.championat.com/lifestyle/article-4027747-chem-polezen-holodnyj-dush-pohudenie-vosstanovlenie-myshc-ukreplenie-immuniteta.html\",\n        \"short_link\": \"www.championat.com\"\n    },\n]",
           "type": "json"
         }
       ],
