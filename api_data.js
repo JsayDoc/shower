@@ -484,6 +484,198 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "accounts/to_bathe/",
+    "title": "Принять душ",
+    "success": {
+      "examples": [
+        {
+          "title": "1.Success-Response:",
+          "content": "{\n    \"daily_norm\": {\n        \"notify\": true,\n        \"date\": \"2021-09-06\"\n    }\n}",
+          "type": "json"
+        },
+        {
+          "title": "2.Success-Response:",
+          "content": "{\n    \"daily_norm\": {\n        \"notify\": false\n    }\n}",
+          "type": "json"
+        }
+      ],
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "Object",
+            "optional": false,
+            "field": "daily_norm",
+            "description": "<p>Дневная цель</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "daily_norm.notify",
+            "description": "<p>Поздравить <code>True</code> - да, <code>False</code> - нет</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "daily_norm.date",
+            "description": "<p>День выполнения</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>User Bearer Token.</p>"
+          }
+        ]
+      }
+    },
+    "permission": [
+      {
+        "name": "User",
+        "title": "User access rights needed.",
+        "description": "<p>Permission is granted to modify user objects.</p>"
+      }
+    ],
+    "name": "to_bathe",
+    "group": "Душ_и_достижения",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "YYYY-MM-DD"
+            ],
+            "optional": false,
+            "field": "date",
+            "description": "<p>Текущая дата</p>"
+          }
+        ]
+      }
+    },
+    "description": "<p>Если Пользователь отменяет пополнение, можно отправить отрицательное значение <code>-150</code></p>",
+    "filename": "shower-develop/apps/uprofile/rest/v1/api.py",
+    "groupTitle": "Душ_и_достижения"
+  },
+  {
+    "type": "post",
+    "url": "history/data/",
+    "title": "История принятой душа",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"date\": 2021,\n            \"data\": {\n                \"8\": {\n                    \"days\": {\n                        \"1\": 107,\n                        \"2\": 100\n                    }\n                },\n                \"9\": {\n                    \"days\": {\n                        \"1\": 100\n                    }\n                }\n            }\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ],
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "Object",
+            "optional": false,
+            "field": "results",
+            "description": "<p>Список истории по годам</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Number",
+            "optional": false,
+            "field": "results.date",
+            "description": "<p>Год</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Object",
+            "optional": false,
+            "field": "results.data",
+            "description": "<p>Помесячная история за текущий год</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Object",
+            "optional": false,
+            "field": "results.data.8",
+            "description": "<p>Число месяца, <code>8 - Август</code></p>"
+          },
+          {
+            "group": "Response",
+            "type": "Object",
+            "optional": false,
+            "field": "results.data.8.days",
+            "description": "<p>Дни месяца</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Number",
+            "optional": false,
+            "field": "results.data.8.days.1",
+            "description": "<p>День <code>&quot;1&quot;: 107</code></p>"
+          },
+          {
+            "group": "Response",
+            "type": "Number",
+            "optional": false,
+            "field": "count",
+            "description": "<p>Количество годов</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "next",
+            "description": "<p>Ссылка на следующую страницу, может быть <code>string</code> или <code>null</code></p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "previous",
+            "description": "<p>Ссылка на предыдущую страницу, может быть <code>string</code> или <code>null</code></p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>User Bearer Token.</p>"
+          }
+        ]
+      }
+    },
+    "permission": [
+      {
+        "name": "User",
+        "title": "User access rights needed.",
+        "description": "<p>Permission is granted to modify user objects.</p>"
+      }
+    ],
+    "name": "history",
+    "group": "История",
+    "filename": "shower-develop/apps/history/rest/v1/api.py",
+    "groupTitle": "История"
+  },
+  {
+    "type": "post",
     "url": "notification/fcm_token/",
     "title": "FCM Token",
     "success": {
@@ -1718,93 +1910,6 @@ define({ "api": [
   },
   {
     "type": "patch",
-    "url": "profile/shower-settings/",
-    "title": "Обновление настроек душа",
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "{\n    \"bask_before_shower\": 50,\n    \"cold_shower\": 15,\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "1.0.0",
-    "header": {
-      "fields": {
-        "Header": [
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "Authorization",
-            "description": "<p>User Bearer Token.</p>"
-          }
-        ]
-      }
-    },
-    "permission": [
-      {
-        "name": "User",
-        "title": "User access rights needed.",
-        "description": "<p>Permission is granted to modify user objects.</p>"
-      }
-    ],
-    "name": "patch_shower_settings",
-    "group": "Профиль",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": true,
-            "field": "bask_before_shower",
-            "description": "<p>Время в душе</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": true,
-            "field": "cold_shower",
-            "description": "<p>Холодный душ</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": true,
-            "field": "warm_shower",
-            "description": "<p>Теплый душ</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": true,
-            "field": "approaches_in_one_shower",
-            "description": "<p>Подходы</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Boolean",
-            "optional": true,
-            "field": "voice_prompt",
-            "description": "<p>Звук подсказки, <code>True</code> - включен, <code>False</code> - отключен</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": true,
-            "field": "voice_type",
-            "description": "<p>Тип голоса, <code>WOMANISH</code> - Женский, <code>MASCULINE</code> - Мужской</p>"
-          }
-        ]
-      }
-    },
-    "filename": "shower-develop/apps/uprofile/rest/v1/api.py",
-    "groupTitle": "Профиль"
-  },
-  {
-    "type": "put",
     "url": "profile/shower-settings/",
     "title": "Назначить настройки душа",
     "success": {
