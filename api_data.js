@@ -492,11 +492,6 @@ define({ "api": [
           "title": "1.Success-Response:",
           "content": "{\n    \"daily_norm\": {\n        \"notify\": true,\n        \"date\": \"2021-09-06\"\n    }\n}",
           "type": "json"
-        },
-        {
-          "title": "2.Success-Response:",
-          "content": "{\n    \"daily_norm\": {\n        \"notify\": false\n    }\n}",
-          "type": "json"
         }
       ],
       "fields": {
@@ -564,14 +559,13 @@ define({ "api": [
         ]
       }
     },
-    "description": "<p>Если Пользователь отменяет пополнение, можно отправить отрицательное значение <code>-150</code></p>",
     "filename": "shower-develop/apps/uprofile/rest/v1/api.py",
     "groupTitle": "Душ_и_достижения"
   },
   {
     "type": "post",
     "url": "history/data/",
-    "title": "История принятой душа",
+    "title": "История принятого душа",
     "success": {
       "examples": [
         {
