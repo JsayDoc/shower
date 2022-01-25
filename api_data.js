@@ -483,6 +483,329 @@ define({ "api": [
     "groupTitle": "Аутентификация"
   },
   {
+    "type": "get",
+    "url": "achievements/",
+    "title": "список достижений",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"last_achievement\": {\n        \"image\": null,\n        \"received\": \"25.01.2022\",\n        \"ach_type\": \"Литры потраченной воды\"\n    },\n    \"daily_active\": [\n        {\n            \"achievement\": {\n                \"achievement_type\": \"daily_active\",\n                \"image\": null,\n                \"title\": \"Охотник на простуду\",\n                \"slug\": \"oxotnik-na-prostudu\",\n                \"description\": \"\"\n            },\n            \"progress\": 1,\n            \"completed\": true,\n            \"complete_date\": \"2022-01-25T15:40:16Z\",\n            \"viewed\": false,\n            \"version\": 1\n        },\n        {\n            \"achievement\": {\n                \"achievement_type\": \"daily_active\",\n                \"image\": null,\n                \"title\": \"Истребитель ванных чудовищ\",\n                \"slug\": \"istrebitel-vannix-chudovish\",\n                \"description\": \"\"\n            }\n        }\n    ],\n    \"wellness_fountain\": [],\n    \"wasted_water\": [\n        {\n            \"achievement\": {\n                \"achievement_type\": \"wasted_water\",\n                \"image\": null,\n                \"title\": \"Вы встали на мокрую дорожку.\",\n                \"slug\": \"vi-vstali-na-mokri-put\",\n                \"description\": \"\"\n            },\n            \"progress\": 30,\n            \"completed\": true,\n            \"complete_date\": \"2022-01-25T15:41:23Z\",\n            \"viewed\": false,\n            \"version\": 1\n        },\n        {\n            \"achievement\": {\n                \"achievement_type\": \"wasted_water\",\n                \"image\": null,\n                \"title\": \"Человек- Водопад\",\n                \"slug\": \"chelovek-bodapad\",\n                \"description\": \"\"\n            }\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ],
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "Object",
+            "optional": false,
+            "field": "last_achievement",
+            "description": "<p>Последняя достижения</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "last_achievement.image",
+            "description": "<p>Иконка</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Date",
+            "optional": false,
+            "field": "last_achievement.received",
+            "description": "<p>Получен</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "last_achievement.ach_type",
+            "description": "<p>Тип достижении</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Object",
+            "optional": false,
+            "field": "daily_active",
+            "description": "<p>Ежедневная активность</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "daily_active.progress",
+            "description": "<p>Прогресс</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "daily_active.completed",
+            "description": "<p>Завершенный</p>"
+          },
+          {
+            "group": "Response",
+            "type": "DateTime",
+            "optional": false,
+            "field": "daily_active.complete_date",
+            "description": "<p>дата завершенный</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "daily_active.viewed",
+            "description": "<p>Посмотрен</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "daily_active.version",
+            "description": "<p>Версия</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Object",
+            "optional": false,
+            "field": "daily_active.achievement",
+            "description": "<p>Достижения</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "daily_active.achievement.achievement_type",
+            "description": "<p>Тип достижения</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "daily_active.achievement.image",
+            "description": "<p>Иконка</p>"
+          },
+          {
+            "group": "Response",
+            "type": "DateTime",
+            "optional": false,
+            "field": "daily_active.achievement.title",
+            "description": "<p>Заголовок</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "daily_active.achievement.slug",
+            "description": "<p>Алиас</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "daily_active.achievement.description",
+            "description": "<p>Описание</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Object",
+            "optional": false,
+            "field": "wellness_fountain",
+            "description": "<p>Фонтан оздоровления</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "wellness_fountain.progress",
+            "description": "<p>Прогресс</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "wellness_fountain.completed",
+            "description": "<p>Завершенный</p>"
+          },
+          {
+            "group": "Response",
+            "type": "DateTime",
+            "optional": false,
+            "field": "wellness_fountain.complete_date",
+            "description": "<p>дата завершенный</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "wellness_fountain.viewed",
+            "description": "<p>Посмотрен</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "wellness_fountain.version",
+            "description": "<p>Версия</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Object",
+            "optional": false,
+            "field": "wellness_fountain.achievement",
+            "description": "<p>Достижения</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "wellness_fountain.achievement.achievement_type",
+            "description": "<p>Тип достижения</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "wellness_fountain.achievement.image",
+            "description": "<p>Иконка</p>"
+          },
+          {
+            "group": "Response",
+            "type": "DateTime",
+            "optional": false,
+            "field": "wellness_fountain.achievement.title",
+            "description": "<p>Заголовок</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "wellness_fountain.achievement.slug",
+            "description": "<p>Алиас</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "wellness_fountain.achievement.description",
+            "description": "<p>Описание</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Object",
+            "optional": false,
+            "field": "wasted_water",
+            "description": "<p>Литры потраченной воды</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "wasted_water.progress",
+            "description": "<p>Прогресс</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "wasted_water.completed",
+            "description": "<p>Завершенный</p>"
+          },
+          {
+            "group": "Response",
+            "type": "DateTime",
+            "optional": false,
+            "field": "wasted_water.complete_date",
+            "description": "<p>дата завершенный</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "wasted_water.viewed",
+            "description": "<p>Посмотрен</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "wasted_water.version",
+            "description": "<p>Версия</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Object",
+            "optional": false,
+            "field": "wasted_water.achievement",
+            "description": "<p>Достижения</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "wasted_water.achievement.achievement_type",
+            "description": "<p>Тип достижения</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "wasted_water.achievement.image",
+            "description": "<p>Иконка</p>"
+          },
+          {
+            "group": "Response",
+            "type": "DateTime",
+            "optional": false,
+            "field": "wasted_water.achievement.title",
+            "description": "<p>Заголовок</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "wasted_water.achievement.slug",
+            "description": "<p>Алиас</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "wasted_water.achievement.description",
+            "description": "<p>Описание</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>User Bearer Token.</p>"
+          }
+        ]
+      }
+    },
+    "permission": [
+      {
+        "name": "User",
+        "title": "User access rights needed.",
+        "description": "<p>Permission is granted to modify user objects.</p>"
+      }
+    ],
+    "name": "achievements_list",
+    "group": "Душ_и_достижения",
+    "filename": "shower-develop/apps/achievements/rest/v1/api.py",
+    "groupTitle": "Душ_и_достижения"
+  },
+  {
     "type": "post",
     "url": "accounts/to_bathe/",
     "title": "Принять душ",
