@@ -505,24 +505,101 @@ define({ "api": [
           },
           {
             "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "last_achievement.progress",
+            "description": "<p>Прогресс</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "last_achievement.completed",
+            "description": "<p>Завершенный</p>"
+          },
+          {
+            "group": "Response",
+            "type": "DateTime",
+            "optional": false,
+            "field": "last_achievement.complete_date",
+            "description": "<p>дата завершенный</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "last_achievement.viewed",
+            "description": "<p>Посмотрен</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "last_achievement.version",
+            "description": "<p>Версия</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "last_achievement.users_percent",
+            "description": "<p>процент выполнивших</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Object",
+            "optional": false,
+            "field": "last_achievement.achievement",
+            "description": "<p>Достижения</p>"
+          },
+          {
+            "group": "Response",
             "type": "String",
             "optional": false,
-            "field": "last_achievement.image",
+            "field": "last_achievement.achievement.achievement_type",
+            "description": "<p>Тип достижения</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "last_achievement.achievement.image",
             "description": "<p>Иконка</p>"
           },
           {
             "group": "Response",
-            "type": "Date",
+            "type": "String",
             "optional": false,
-            "field": "last_achievement.received",
-            "description": "<p>Получен</p>"
+            "field": "last_achievement.achievement.title",
+            "description": "<p>Заголовок</p>"
           },
           {
             "group": "Response",
             "type": "String",
             "optional": false,
-            "field": "last_achievement.ach_type",
-            "description": "<p>Тип достижении</p>"
+            "field": "last_achievement.achievement.slug",
+            "description": "<p>Алиас</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "last_achievement.achievement.description",
+            "description": "<p>Описание</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "single_achievements.achievement.text",
+            "description": "<p>текст</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "single_achievements.achievement.name",
+            "description": "<p>заголовок для рассказать друзьям</p>"
           },
           {
             "group": "Response",
@@ -575,35 +652,35 @@ define({ "api": [
           },
           {
             "group": "Response",
-            "type": "Integer",
+            "type": "String",
             "optional": false,
             "field": "daily_active.achievement.achievement_type",
             "description": "<p>Тип достижения</p>"
           },
           {
             "group": "Response",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "daily_active.achievement.image",
             "description": "<p>Иконка</p>"
           },
           {
             "group": "Response",
-            "type": "DateTime",
+            "type": "String",
             "optional": false,
             "field": "daily_active.achievement.title",
             "description": "<p>Заголовок</p>"
           },
           {
             "group": "Response",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "daily_active.achievement.slug",
             "description": "<p>Алиас</p>"
           },
           {
             "group": "Response",
-            "type": "Integer",
+            "type": "String",
             "optional": false,
             "field": "daily_active.achievement.description",
             "description": "<p>Описание</p>"
@@ -659,35 +736,35 @@ define({ "api": [
           },
           {
             "group": "Response",
-            "type": "Integer",
+            "type": "String",
             "optional": false,
             "field": "wellness_fountain.achievement.achievement_type",
             "description": "<p>Тип достижения</p>"
           },
           {
             "group": "Response",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "wellness_fountain.achievement.image",
             "description": "<p>Иконка</p>"
           },
           {
             "group": "Response",
-            "type": "DateTime",
+            "type": "String",
             "optional": false,
             "field": "wellness_fountain.achievement.title",
             "description": "<p>Заголовок</p>"
           },
           {
             "group": "Response",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "wellness_fountain.achievement.slug",
             "description": "<p>Алиас</p>"
           },
           {
             "group": "Response",
-            "type": "Integer",
+            "type": "String",
             "optional": false,
             "field": "wellness_fountain.achievement.description",
             "description": "<p>Описание</p>"
@@ -743,37 +820,121 @@ define({ "api": [
           },
           {
             "group": "Response",
-            "type": "Integer",
+            "type": "String",
             "optional": false,
             "field": "wasted_water.achievement.achievement_type",
             "description": "<p>Тип достижения</p>"
           },
           {
             "group": "Response",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "wasted_water.achievement.image",
             "description": "<p>Иконка</p>"
           },
           {
             "group": "Response",
-            "type": "DateTime",
+            "type": "String",
             "optional": false,
             "field": "wasted_water.achievement.title",
             "description": "<p>Заголовок</p>"
           },
           {
             "group": "Response",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
             "field": "wasted_water.achievement.slug",
             "description": "<p>Алиас</p>"
           },
           {
             "group": "Response",
-            "type": "Integer",
+            "type": "String",
             "optional": false,
             "field": "wasted_water.achievement.description",
+            "description": "<p>Описание</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Object",
+            "optional": false,
+            "field": "single_achievements",
+            "description": "<p>Одиночные достижения</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "single_achievements.progress",
+            "description": "<p>Прогресс</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "single_achievements.completed",
+            "description": "<p>Завершенный</p>"
+          },
+          {
+            "group": "Response",
+            "type": "DateTime",
+            "optional": false,
+            "field": "single_achievements.complete_date",
+            "description": "<p>дата завершенный</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "single_achievements.viewed",
+            "description": "<p>Посмотрен</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "single_achievements.version",
+            "description": "<p>Версия</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Object",
+            "optional": false,
+            "field": "single_achievements.achievement",
+            "description": "<p>Достижения</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "single_achievements.achievement.achievement_type",
+            "description": "<p>Тип достижения</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "single_achievements.achievement.image",
+            "description": "<p>Иконка</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "single_achievements.achievement.title",
+            "description": "<p>Заголовок</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "single_achievements.achievement.slug",
+            "description": "<p>Алиас</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "single_achievements.achievement.description",
             "description": "<p>Описание</p>"
           }
         ]
