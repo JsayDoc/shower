@@ -490,7 +490,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"last_achievement\": {\n        \"image\": null,\n        \"received\": \"25.01.2022\",\n        \"ach_type\": \"Литры потраченной воды\"\n    },\n    \"daily_active\": [\n        {\n            \"achievement\": {\n                \"achievement_type\": \"daily_active\",\n                \"image\": null,\n                \"title\": \"Охотник на простуду\",\n                \"slug\": \"oxotnik-na-prostudu\",\n                \"description\": \"\"\n            },\n            \"progress\": 1,\n            \"completed\": true,\n            \"complete_date\": \"2022-01-25T15:40:16Z\",\n            \"viewed\": false,\n            \"version\": 1\n        },\n        {\n            \"achievement\": {\n                \"achievement_type\": \"daily_active\",\n                \"image\": null,\n                \"title\": \"Истребитель ванных чудовищ\",\n                \"slug\": \"istrebitel-vannix-chudovish\",\n                \"description\": \"\"\n            }\n        }\n    ],\n    \"wellness_fountain\": [],\n    \"wasted_water\": [\n        {\n            \"achievement\": {\n                \"achievement_type\": \"wasted_water\",\n                \"image\": null,\n                \"title\": \"Вы встали на мокрую дорожку.\",\n                \"slug\": \"vi-vstali-na-mokri-put\",\n                \"description\": \"\"\n            },\n            \"progress\": 30,\n            \"completed\": true,\n            \"complete_date\": \"2022-01-25T15:41:23Z\",\n            \"viewed\": false,\n            \"version\": 1\n        },\n        {\n            \"achievement\": {\n                \"achievement_type\": \"wasted_water\",\n                \"image\": null,\n                \"title\": \"Человек- Водопад\",\n                \"slug\": \"chelovek-bodapad\",\n                \"description\": \"\"\n            }\n        }\n    ]\n}",
+          "content": "{\n    \"last_achievement\": {\n        {\n        \"achievement\": {\n            \"achievement_type\": \"daily_active\",\n            \"image\": null,\n            \"title\": \"Охотник на простуду\",\n            \"slug\": \"oxotnik-na-prostudu\",\n            \"description\": \"\",\n            \"text\": \"Bla Bla\",\n            \"name\": \"рассказать друзьям\"\n        },\n        \"progress\": 1,\n        \"completed\": true,\n        \"complete_date\": \"2022-01-25T15:40:16Z\",\n        \"viewed\": false,\n        \"version\": 1\n        \"users_percent\": 60\n    }\n    },\n    \"daily_active\": [\n        {\n            \"achievement\": {\n                \"achievement_type\": \"daily_active\",\n                \"image\": null,\n                \"title\": \"Охотник на простуду\",\n                \"slug\": \"oxotnik-na-prostudu\",\n                \"description\": \"\",\n                \"text\": \"Bla Bla\",\n                \"name\": \"рассказать друзьям\"\n            },\n            \"progress\": 1,\n            \"completed\": true,\n            \"complete_date\": \"2022-01-25T15:40:16Z\",\n            \"viewed\": false,\n            \"version\": 1\n            \"users_percent\": 60\n        },\n        {\n            \"achievement\": {\n                \"achievement_type\": \"daily_active\",\n                \"image\": null,\n                \"title\": \"Истребитель ванных чудовищ\",\n                \"slug\": \"istrebitel-vannix-chudovish\",\n                \"description\": \"\",\n                \"text\": \"Bla Bla\",\n                \"name\": \"рассказать друзьям\"\n            }\n        }\n    ],\n    \"wellness_fountain\": [],\n    \"wasted_water\": [\n        {\n            \"achievement\": {\n                \"achievement_type\": \"wasted_water\",\n                \"image\": null,\n                \"title\": \"Вы встали на мокрую дорожку.\",\n                \"slug\": \"vi-vstali-na-mokri-put\",\n                \"description\": \"\",\n                \"text\": \"Bla Bla\",\n                \"name\": \"рассказать друзьям\"\n            },\n            \"progress\": 30,\n            \"completed\": true,\n            \"complete_date\": \"2022-01-25T15:41:23Z\",\n            \"viewed\": false,\n            \"version\": 1\n            \"users_percent\": 60\n        },\n        {\n            \"achievement\": {\n                \"achievement_type\": \"wasted_water\",\n                \"image\": null,\n                \"title\": \"Человек- Водопад\",\n                \"slug\": \"chelovek-bodapad\",\n                \"description\": \"\",\n                \"text\": \"Bla Bla\",\n                \"name\": \"рассказать друзьям\"\n            }\n        }\n    ]\n}",
           "type": "json"
         }
       ],
@@ -591,14 +591,14 @@
             "group": "Response",
             "type": "String",
             "optional": false,
-            "field": "single_achievements.achievement.text",
+            "field": "last_achievement.achievement.text",
             "description": "<p>текст</p>"
           },
           {
             "group": "Response",
             "type": "String",
             "optional": false,
-            "field": "single_achievements.achievement.name",
+            "field": "last_achievement.achievement.name",
             "description": "<p>заголовок для рассказать друзьям</p>"
           },
           {
@@ -687,6 +687,20 @@
           },
           {
             "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "daily_active.achievement.text",
+            "description": "<p>текст</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "daily_active.achievement.name",
+            "description": "<p>заголовок для рассказать друзьям</p>"
+          },
+          {
+            "group": "Response",
             "type": "Object",
             "optional": false,
             "field": "wellness_fountain",
@@ -768,6 +782,20 @@
             "optional": false,
             "field": "wellness_fountain.achievement.description",
             "description": "<p>Описание</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "wellness_fountain.achievement.text",
+            "description": "<p>текст</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "wellness_fountain.achievement.name",
+            "description": "<p>заголовок для рассказать друзьям</p>"
           },
           {
             "group": "Response",
@@ -855,6 +883,20 @@
           },
           {
             "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "wasted_water.achievement.text",
+            "description": "<p>текст</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "wasted_water.achievement.name",
+            "description": "<p>заголовок для рассказать друзьям</p>"
+          },
+          {
+            "group": "Response",
             "type": "Object",
             "optional": false,
             "field": "single_achievements",
@@ -897,6 +939,13 @@
           },
           {
             "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "single_achievements.users_percent",
+            "description": "<p>процент выполнивших</p>"
+          },
+          {
+            "group": "Response",
             "type": "Object",
             "optional": false,
             "field": "single_achievements.achievement",
@@ -936,6 +985,20 @@
             "optional": false,
             "field": "single_achievements.achievement.description",
             "description": "<p>Описание</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "single_achievements.achievement.text",
+            "description": "<p>текст</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "single_achievements.achievement.name",
+            "description": "<p>заголовок для рассказать друзьям</p>"
           }
         ]
       }
@@ -964,6 +1027,147 @@
     "name": "achievements_list",
     "group": "Душ_и_достижения",
     "filename": "shower-develop/apps/achievements/rest/v1/api.py",
+    "groupTitle": "Душ_и_достижения"
+  },
+  {
+    "type": "post",
+    "url": "accounts/dj_booth/",
+    "title": "Кабинка ди-джея",
+    "success": {
+      "examples": [
+        {
+          "title": "1.Success-Response:",
+          "content": "{\n    \"progress\": 30,\n    \"completed\": true,\n    \"complete_date\": \"2022-01-25T15:41:23Z\",\n    \"viewed\": false,\n    \"version\": 1\n    \"users_percent\": 60\n    \"achievement\": {\n        \"achievement_type\": \"wasted_water\",\n        \"image\": null,\n        \"title\": \"Человек- Водопад\",\n        \"slug\": \"chelovek-bodapad\",\n        \"description\": \"\",\n        \"text\": \"Bla Bla\",\n        \"name\": \"рассказать друзьям\"\n    }\n}",
+          "type": "json"
+        }
+      ],
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "progress",
+            "description": "<p>Прогресс</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "completed",
+            "description": "<p>Завершенный</p>"
+          },
+          {
+            "group": "Response",
+            "type": "DateTime",
+            "optional": false,
+            "field": "complete_date",
+            "description": "<p>дата завершенный</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "viewed",
+            "description": "<p>Посмотрен</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "version",
+            "description": "<p>Версия</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "users_percent",
+            "description": "<p>процент выполнивших</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Object",
+            "optional": false,
+            "field": "achievement",
+            "description": "<p>Достижения</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "achievement.achievement_type",
+            "description": "<p>Тип достижения</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "achievement.image",
+            "description": "<p>Иконка</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "achievement.title",
+            "description": "<p>Заголовок</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "achievement.slug",
+            "description": "<p>Алиас</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "achievement.description",
+            "description": "<p>Описание</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "achievement.text",
+            "description": "<p>текст</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "achievement.name",
+            "description": "<p>заголовок для рассказать друзьям</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>User Bearer Token.</p>"
+          }
+        ]
+      }
+    },
+    "permission": [
+      {
+        "name": "User",
+        "title": "User access rights needed.",
+        "description": "<p>Permission is granted to modify user objects.</p>"
+      }
+    ],
+    "name": "single_achievement",
+    "group": "Душ_и_достижения",
+    "filename": "shower-develop/apps/uprofile/rest/v1/api.py",
     "groupTitle": "Душ_и_достижения"
   },
   {
