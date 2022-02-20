@@ -2862,8 +2862,8 @@
   },
   {
     "type": "get",
-    "url": "course/",
-    "title": "курс",
+    "url": "course/start/",
+    "title": "начать курс",
     "success": {
       "examples": [
         {
@@ -3010,7 +3010,37 @@
         "description": "<p>Permission is granted to modify user objects.</p>"
       }
     ],
-    "name": "course_detail",
+    "name": "start_course",
+    "group": "курс",
+    "filename": "shower/apps/course/rest/v1/api.py",
+    "groupTitle": "курс"
+  },
+  {
+    "type": "get",
+    "url": "course/stop/",
+    "title": "остановить курс",
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>User Bearer Token.</p>"
+          }
+        ]
+      }
+    },
+    "permission": [
+      {
+        "name": "User",
+        "title": "User access rights needed.",
+        "description": "<p>Permission is granted to modify user objects.</p>"
+      }
+    ],
+    "name": "stop_course",
     "group": "курс",
     "filename": "shower/apps/course/rest/v1/api.py",
     "groupTitle": "курс"
