@@ -484,6 +484,117 @@
   },
   {
     "type": "get",
+    "url": "core/android/video/instructions/",
+    "title": "Android watch инструкции",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "[\n    {\n        \"title\": \"Пример 1\",\n        \"file\": \"https://dev.api.water.jsay.ru/media/core/video/instructions/1.mp4\"\n    },\n    {\n        \"title\": \"Пример 2\",\n        \"file\": \"https://dev.api.water.jsay.ru/media/core/video/instructions/2.mp4\"\n    }\n]",
+          "type": "json"
+        }
+      ],
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "title",
+            "description": "<p>Название</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "file",
+            "description": "<p>Ссылка на файл</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "name": "get_android_videoinstructions",
+    "group": "Видеоинструкции",
+    "filename": "shower/apps/core/rest/v1/api.py",
+    "groupTitle": "Видеоинструкции"
+  },
+  {
+    "type": "get",
+    "url": "core/apple/video/instructions/",
+    "title": "Apple watch инструкции",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "[\n    {\n        \"title\": \"Пример 1\",\n        \"file\": \"https://dev.api.water.jsay.ru/media/core/video/instructions/1.mp4\"\n    },\n    {\n        \"title\": \"Пример 2\",\n        \"file\": \"https://dev.api.water.jsay.ru/media/core/video/instructions/2.mp4\"\n    }\n]",
+          "type": "json"
+        }
+      ],
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "title",
+            "description": "<p>Название</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "file",
+            "description": "<p>Ссылка на файл</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "name": "get_apple_videoinstructions",
+    "group": "Видеоинструкции",
+    "filename": "shower/apps/core/rest/v1/api.py",
+    "groupTitle": "Видеоинструкции"
+  },
+  {
+    "type": "get",
+    "url": "core/video/instructions/",
+    "title": "Видео инструкции",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "[\n    {\n        \"title\": \"Пример 1\",\n        \"file\": \"https://dev.api.water.jsay.ru/media/core/video/instructions/1.mp4\"\n    },\n    {\n        \"title\": \"Пример 2\",\n        \"file\": \"https://dev.api.water.jsay.ru/media/core/video/instructions/2.mp4\"\n    }\n]",
+          "type": "json"
+        }
+      ],
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "title",
+            "description": "<p>Название</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "file",
+            "description": "<p>Ссылка на файл</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "name": "get_videoinstructions",
+    "group": "Видеоинструкции",
+    "filename": "shower/apps/core/rest/v1/api.py",
+    "groupTitle": "Видеоинструкции"
+  },
+  {
+    "type": "get",
     "url": "achievements/",
     "title": "список достижений",
     "success": {
@@ -1384,7 +1495,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"date\": 2021,\n            \"data\": {\n                \"8\": {\n                    \"days\": {\n                        \"1\": 107,\n                        \"2\": 100\n                    }\n                },\n                \"9\": {\n                    \"days\": {\n                        \"1\": 100\n                    }\n                }\n            }\n        }\n    ]\n}",
+          "content": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"date\": 2021,\n            \"data\": {\n                \"8\": {\n                    \"days\": {\n                        \"1\": 'true',\n                        \"2\": 'false'\n                    }\n                },\n                \"9\": {\n                    \"days\": {\n                        \"1\": 'true',\n                        \"2\": 'false'\n                    }\n                }\n            }\n        }\n    ]\n}",
           "type": "json"
         }
       ],
@@ -1427,10 +1538,10 @@
           },
           {
             "group": "Response",
-            "type": "Number",
+            "type": "String",
             "optional": false,
             "field": "results.data.8.days.1",
-            "description": "<p>День <code>&quot;1&quot;: 107</code></p>"
+            "description": "<p>День <code>&quot;1&quot;: true</code></p>"
           },
           {
             "group": "Response",
@@ -2061,6 +2172,66 @@
     "group": "Основные",
     "filename": "shower/apps/core/rest/v1/api.py",
     "groupTitle": "Основные"
+  },
+  {
+    "type": "post",
+    "url": "feedback/add_feedback/",
+    "title": "Добавить отзыв",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"question\": [\n        1,\n        4\n    ],\n    \"message\": \"testing\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>User Bearer Token.</p>"
+          }
+        ]
+      }
+    },
+    "permission": [
+      {
+        "name": "User",
+        "title": "User access rights needed.",
+        "description": "<p>Permission is granted to modify user objects.</p>"
+      }
+    ],
+    "name": "add_feedback",
+    "group": "Отзывы",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Object[]",
+            "optional": true,
+            "field": "question",
+            "description": "<p>ID вопроса, JSON Array пример: [<code>1, 4</code>]</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "size": "2000",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Комментарий.</p>"
+          }
+        ]
+      }
+    },
+    "filename": "shower/apps/feedback/rest/v1/api.py",
+    "groupTitle": "Отзывы"
   },
   {
     "type": "get",
