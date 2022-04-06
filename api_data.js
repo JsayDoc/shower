@@ -2291,6 +2291,98 @@ define({ "api": [
     "groupTitle": "Отзывы"
   },
   {
+    "type": "get",
+    "url": "accounts/account/",
+    "title": "Просмотр данных",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"id\": 1,\n    \"first_name\": \"Егор\",\n    \"email\": \"egor@example.com\",\n    \"newsletters\": true\n    \"auth_status\": {\n        \"social\": true,\n        \"provider\": \"facebook\"\n    }\n}",
+          "type": "json"
+        }
+      ],
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "Object",
+            "optional": false,
+            "field": "auth_status",
+            "description": "<p>Статус авторизации</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "auth_status.social",
+            "description": "<p>Статус соц. сети, <code>True</code> - через соц. сеть, <code>False</code> - через email</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "auth_status.provider",
+            "description": "<p>Название соц. сети</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>ID пользователя</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "first_name",
+            "description": "<p>Имя пользователя</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Эл. почта пользователя</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "newsletters",
+            "description": "<p>Подписка на новости</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>User Bearer Token.</p>"
+          }
+        ]
+      }
+    },
+    "permission": [
+      {
+        "name": "User",
+        "title": "User access rights needed.",
+        "description": "<p>Permission is granted to modify user objects.</p>"
+      }
+    ],
+    "name": "account_info",
+    "group": "Пользователь",
+    "filename": "shower/apps/account/rest/v1/api.py",
+    "groupTitle": "Пользователь"
+  },
+  {
     "type": "patch",
     "url": "accounts/account/update/",
     "title": "Редактирование данных",
