@@ -1495,7 +1495,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"date\": 2021,\n            \"data\": {\n                \"8\": {\n                    \"days\": {\n                        \"1\": 'true',\n                        \"2\": 'false'\n                    }\n                },\n                \"9\": {\n                    \"days\": {\n                        \"1\": 'true',\n                        \"2\": 'false'\n                    }\n                }\n            }\n        }\n    ]\n}",
+          "content": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"date\": 2021,\n            \"data\": {\n                \"8\": {\n                    \"days\": {\n                        \"1\": true,\n                        \"2\": false\n                    }\n                },\n                \"9\": {\n                    \"days\": {\n                        \"1\": true,\n                        \"2\": false\n                    }\n                }\n            }\n        }\n    ]\n}",
           "type": "json"
         }
       ],
@@ -3074,12 +3074,33 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"check_email\": false,\n    \"check_full_info\": false,\n}",
+          "content": "{\n    \"check_email\": false,\n    \"check_full_info\": false,\n    \"course\": {\n        \"missed\": 0,\n        \"end\": 28\n    }\n}",
           "type": "json"
         }
       ],
       "fields": {
         "Response": [
+          {
+            "group": "Response",
+            "type": "Object",
+            "optional": false,
+            "field": "course",
+            "description": "<p>Курс</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Number",
+            "optional": false,
+            "field": "course.missed",
+            "description": "<p>Пропущенные дни</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Number",
+            "optional": false,
+            "field": "course.end",
+            "description": "<p>Количество дней до завершения</p>"
+          },
           {
             "group": "Response",
             "type": "Boolean",
