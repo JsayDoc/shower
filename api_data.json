@@ -1488,14 +1488,14 @@
     "groupTitle": "Душ_и_достижения"
   },
   {
-    "type": "post",
+    "type": "get",
     "url": "history/data/",
     "title": "История принятого душа",
     "success": {
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"date\": 2021,\n            \"data\": {\n                \"8\": {\n                    \"days\": {\n                        \"1\": true,\n                        \"2\": false\n                    }\n                },\n                \"9\": {\n                    \"days\": {\n                        \"1\": true,\n                        \"2\": false\n                    }\n                }\n            }\n        }\n    ]\n}",
+          "content": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"date\": 2021,\n            \"data\": {\n                \"8\": {\n                    \"days\": {\n                        \"1\": true,\n                        \"2\": false\n                    }\n                },\n                \"9\": {\n                    \"days\": {\n                        \"1\": true,\n                        \"2\": false\n                    }\n                }\n            }\n        }\n    ],\n    \"joined\": \"2021-05-27\"\n}",
           "type": "json"
         }
       ],
@@ -1563,6 +1563,13 @@
             "optional": false,
             "field": "previous",
             "description": "<p>Ссылка на предыдущую страницу, может быть <code>string</code> или <code>null</code></p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "joined",
+            "description": "<p>День регистрации</p>"
           }
         ]
       }
