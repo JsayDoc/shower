@@ -3503,7 +3503,7 @@
   {
     "type": "patch",
     "url": "course/update/",
-    "title": "обновить настройки курса",
+    "title": "обновить курс",
     "version": "1.0.0",
     "header": {
       "fields": {
