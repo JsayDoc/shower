@@ -3502,8 +3502,8 @@ define({ "api": [
   },
   {
     "type": "patch",
-    "url": "course/stop/",
-    "title": "остановить курс",
+    "url": "course/update/",
+    "title": "обновить настройки курса",
     "version": "1.0.0",
     "header": {
       "fields": {
