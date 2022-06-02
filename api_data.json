@@ -3148,11 +3148,27 @@
     ],
     "name": "user_status",
     "group": "Статус",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "YYYY-MM-DD"
+            ],
+            "optional": false,
+            "field": "date",
+            "description": "<p>Текущая дата</p>"
+          }
+        ]
+      }
+    },
     "filename": "shower/apps/account/rest/v1/api.py",
     "groupTitle": "Статус"
   },
   {
-    "type": "get",
+    "type": "post",
     "url": "course/start/",
     "title": "начать курс",
     "success": {
@@ -3232,6 +3248,13 @@
             "group": "Response",
             "type": "Boolean",
             "optional": false,
+            "field": "active",
+            "description": "<p>статус курса</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
             "field": "auto_settings",
             "description": "<p>автоувеличение настроек</p>"
           },
@@ -3303,6 +3326,22 @@
     ],
     "name": "start_course",
     "group": "курс",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "YYYY-MM-DD"
+            ],
+            "optional": false,
+            "field": "date",
+            "description": "<p>Текущая дата</p>"
+          }
+        ]
+      }
+    },
     "filename": "shower/apps/course/rest/v1/api.py",
     "groupTitle": "курс"
   },
@@ -3333,6 +3372,299 @@
     ],
     "name": "stop_course",
     "group": "курс",
+    "success": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "Object",
+            "optional": false,
+            "field": "course",
+            "description": "<p>Курс</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "course.image",
+            "description": "<p>Иконка</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "course.title",
+            "description": "<p>Заголовок</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "course.slug",
+            "description": "<p>Алиас</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "course.duration",
+            "description": "<p>Продолжительность или количество</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "course.may_miss",
+            "description": "<p>может пропустить</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "course.description",
+            "description": "<p>Описание</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "course.motivational_messages",
+            "description": "<p>мотивационные сообщения</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "course.percent",
+            "description": "<p>процент прошедших Курс Пользователь</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "active",
+            "description": "<p>статус курса</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "auto_settings",
+            "description": "<p>автоувеличение настроек</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "missed",
+            "description": "<p>пропущенные дни</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Object[]",
+            "optional": false,
+            "field": "history",
+            "description": "<p>история курса</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "history.date",
+            "description": "<p>день</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "history.missed",
+            "description": "<p>пропущен</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "history.weekday",
+            "description": "<p>день недели, 0-6 Mo-Su,</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "version",
+            "description": "<p>Счетчик повторений</p>"
+          }
+        ]
+      }
+    },
+    "filename": "shower/apps/course/rest/v1/api.py",
+    "groupTitle": "курс"
+  },
+  {
+    "type": "patch",
+    "url": "course/stop/",
+    "title": "остановить курс",
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>User Bearer Token.</p>"
+          }
+        ]
+      }
+    },
+    "permission": [
+      {
+        "name": "User",
+        "title": "User access rights needed.",
+        "description": "<p>Permission is granted to modify user objects.</p>"
+      }
+    ],
+    "name": "update_course",
+    "group": "курс",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Boolean",
+            "optional": false,
+            "field": "auto_settings",
+            "description": "<p>автоувеличение настроек</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "Object",
+            "optional": false,
+            "field": "course",
+            "description": "<p>Курс</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "course.image",
+            "description": "<p>Иконка</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "course.title",
+            "description": "<p>Заголовок</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "course.slug",
+            "description": "<p>Алиас</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "course.duration",
+            "description": "<p>Продолжительность или количество</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "course.may_miss",
+            "description": "<p>может пропустить</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "course.description",
+            "description": "<p>Описание</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "course.motivational_messages",
+            "description": "<p>мотивационные сообщения</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "course.percent",
+            "description": "<p>процент прошедших Курс Пользователь</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "active",
+            "description": "<p>статус курса</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "auto_settings",
+            "description": "<p>автоувеличение настроек</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "missed",
+            "description": "<p>пропущенные дни</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Object[]",
+            "optional": false,
+            "field": "history",
+            "description": "<p>история курса</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "history.date",
+            "description": "<p>день</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "history.missed",
+            "description": "<p>пропущен</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "history.weekday",
+            "description": "<p>день недели, 0-6 Mo-Su,</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "version",
+            "description": "<p>Счетчик повторений</p>"
+          }
+        ]
+      }
+    },
     "filename": "shower/apps/course/rest/v1/api.py",
     "groupTitle": "курс"
   }
