@@ -2151,7 +2151,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"policy\": \"Политика конфиденциальности – по сути документ, при помощи которого вы объясняете вашим\n    пользователям то, как вы обрабатываете его данные. Часто встречается и другое (официальное) название\n    данного документа - Политика обработки персональных данных.\",\n    \"terms\": \"Условия использования, условия предоставления услуг (англ. Terms of service/use) — это правила,\n    с которыми нужно согласиться перед использованием какой-либо службы, чаще всего в интернете.\"\n}",
+          "content": "{\n    \"policy\": \"JSay IT built the JSay Water app and JSay Shower as a Freemium app.\n    This SERVICE is provided by JSay IT at no cost and is intended for use as is.\",\n    \"policy_ru\": \"Политика конфиденциальности – по сути документ, при помощи которого вы объясняете вашим\n    пользователям то, как вы обрабатываете его данные. Часто встречается и другое (официальное) название\n    данного документа - Политика обработки персональных данных.\",\n    \"terms\": \"By downloading or using the app, these terms will automatically apply to you –\n    you should make sure therefore that you read them carefully before using the app.\",\n    \"terms_ru\": \"Условия использования, условия предоставления услуг (англ. Terms of service/use) — это правила,\n    с которыми нужно согласиться перед использованием какой-либо службы, чаще всего в интернете.\"\n}",
           "type": "json"
         }
       ],
@@ -2162,14 +2162,28 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "policy",
-            "description": "<p>Политика конфиденциальности</p>"
+            "description": "<p>Политика конфиденциальности анг.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "policy_ru",
+            "description": "<p>Политика конфиденциальности русский</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "terms",
-            "description": "<p>Условия использования</p>"
+            "description": "<p>Условия использования анг.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "terms_ru",
+            "description": "<p>Условия использования русский</p>"
           }
         ]
       }
@@ -2241,6 +2255,71 @@ define({ "api": [
     "groupTitle": "Отзывы"
   },
   {
+    "type": "post",
+    "url": "feedback/support/message/create/",
+    "title": "Создать сообщение поддержке",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"message\": \"Сообщение создано\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>User Bearer Token.</p>"
+          }
+        ]
+      }
+    },
+    "permission": [
+      {
+        "name": "User",
+        "title": "User access rights needed.",
+        "description": "<p>Permission is granted to modify user objects.</p>"
+      }
+    ],
+    "name": "add_message",
+    "group": "Отзывы",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "size": "2000",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Комментарий.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "File",
+            "allowedValues": [
+              "png",
+              "jpeg",
+              "jpg"
+            ],
+            "optional": false,
+            "field": "image",
+            "description": "<p>Картинка сообщения.</p>"
+          }
+        ]
+      }
+    },
+    "filename": "shower/apps/feedback/rest/v1/api.py",
+    "groupTitle": "Отзывы"
+  },
+  {
     "type": "get",
     "url": "core/get_questions/",
     "title": "Варианты вопросов",
@@ -2296,6 +2375,260 @@ define({ "api": [
     "group": "Отзывы",
     "filename": "shower/apps/core/rest/v1/api.py",
     "groupTitle": "Отзывы"
+  },
+  {
+    "type": "post",
+    "url": "billing/add/subscription/",
+    "title": "Создать подписку",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"message\": \"Чек проверен\"\n}",
+          "type": "json"
+        }
+      ],
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Чек проверен</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n    \"error_code\": 21003,\n}",
+          "type": "json"
+        }
+      ],
+      "fields": {
+        "Error Code": [
+          {
+            "group": "Error Code",
+            "optional": false,
+            "field": "21002",
+            "description": "<p>Чек поврежден, не удалось его распарсить</p>"
+          },
+          {
+            "group": "Error Code",
+            "optional": false,
+            "field": "21003",
+            "description": "<p>Некорректный чек, покупка не подтверждена</p>"
+          },
+          {
+            "group": "Error Code",
+            "optional": false,
+            "field": "21004",
+            "description": "<p>Ваш Shared Secret некорректный или не соответствует чеку</p>"
+          },
+          {
+            "group": "Error Code",
+            "optional": false,
+            "field": "21005",
+            "description": "<p>Сервер эпла не смог обработать ваш запрос, стоит попробовать еще раз</p>"
+          },
+          {
+            "group": "Error Code",
+            "optional": false,
+            "field": "21006",
+            "description": "<p>Чек недействителен</p>"
+          },
+          {
+            "group": "Error Code",
+            "optional": false,
+            "field": "21007",
+            "description": "<p>Чек из SandBox (тестовой среды), но был отправлен в prod</p>"
+          },
+          {
+            "group": "Error Code",
+            "optional": false,
+            "field": "21008",
+            "description": "<p>Чек из прода, но был отправлен в тестовую среду</p>"
+          },
+          {
+            "group": "Error Code",
+            "optional": false,
+            "field": "21009",
+            "description": "<p>Сервер эпла не смог обработать ваш запрос, стоит попробовать еще раз</p>"
+          },
+          {
+            "group": "Error Code",
+            "optional": false,
+            "field": "21010",
+            "description": "<p>Аккаунт был удален</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>User Bearer Token.</p>"
+          }
+        ]
+      }
+    },
+    "permission": [
+      {
+        "name": "User",
+        "title": "User access rights needed.",
+        "description": "<p>Permission is granted to modify user objects.</p>"
+      }
+    ],
+    "name": "add_subscription",
+    "group": "Подписки",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "store",
+            "description": "<p>Магазин, <code>0</code> - Apple, <code>1</code> - Google</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "registration_id",
+            "description": "<p>Чек полученный от магазина</p>"
+          }
+        ]
+      }
+    },
+    "filename": "shower/apps/billing/rest/v1/api.py",
+    "groupTitle": "Подписки"
+  },
+  {
+    "type": "post",
+    "url": "billing/get/subscription/",
+    "title": "Статус подписки",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"store\": \"0\"\n}",
+          "type": "json"
+        }
+      ],
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "store",
+            "description": "<p>Магазин подписки <code>0</code> - Apple, <code>1</code> - Google, <code>None</code> - Нет активной подписки</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n    \"error_code\": 21003,\n}",
+          "type": "json"
+        }
+      ],
+      "fields": {
+        "Error Code": [
+          {
+            "group": "Error Code",
+            "optional": false,
+            "field": "21002",
+            "description": "<p>Чек поврежден, не удалось его распарсить</p>"
+          },
+          {
+            "group": "Error Code",
+            "optional": false,
+            "field": "21003",
+            "description": "<p>Некорректный чек, покупка не подтверждена</p>"
+          },
+          {
+            "group": "Error Code",
+            "optional": false,
+            "field": "21004",
+            "description": "<p>Ваш Shared Secret некорректный или не соответствует чеку</p>"
+          },
+          {
+            "group": "Error Code",
+            "optional": false,
+            "field": "21005",
+            "description": "<p>Сервер эпла не смог обработать ваш запрос, стоит попробовать еще раз</p>"
+          },
+          {
+            "group": "Error Code",
+            "optional": false,
+            "field": "21006",
+            "description": "<p>Чек недействителен</p>"
+          },
+          {
+            "group": "Error Code",
+            "optional": false,
+            "field": "21007",
+            "description": "<p>Чек из SandBox (тестовой среды), но был отправлен в prod</p>"
+          },
+          {
+            "group": "Error Code",
+            "optional": false,
+            "field": "21008",
+            "description": "<p>Чек из прода, но был отправлен в тестовую среду</p>"
+          },
+          {
+            "group": "Error Code",
+            "optional": false,
+            "field": "21009",
+            "description": "<p>Сервер эпла не смог обработать ваш запрос, стоит попробовать еще раз</p>"
+          },
+          {
+            "group": "Error Code",
+            "optional": false,
+            "field": "21010",
+            "description": "<p>Аккаунт был удален</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>User Bearer Token.</p>"
+          }
+        ]
+      }
+    },
+    "permission": [
+      {
+        "name": "User",
+        "title": "User access rights needed.",
+        "description": "<p>Permission is granted to modify user objects.</p>"
+      }
+    ],
+    "name": "get_subscription",
+    "group": "Подписки",
+    "filename": "shower/apps/billing/rest/v1/api.py",
+    "groupTitle": "Подписки"
   },
   {
     "type": "get",
