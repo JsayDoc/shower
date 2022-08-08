@@ -2783,6 +2783,45 @@
     "groupTitle": "Пользователь"
   },
   {
+    "type": "delete",
+    "url": "accounts/account/delete/remove/schedule/",
+    "title": "Отмена удаления пользователя",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"message\": \"Done\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>User Bearer Token.</p>"
+          }
+        ]
+      }
+    },
+    "permission": [
+      {
+        "name": "User",
+        "title": "User access rights needed.",
+        "description": "<p>Permission is granted to modify user objects.</p>"
+      }
+    ],
+    "name": "cancel_user_remove",
+    "group": "Пользователь",
+    "filename": "shower/apps/account/rest/v1/api.py",
+    "groupTitle": "Пользователь"
+  },
+  {
     "type": "post",
     "url": "accounts/account/change_password/",
     "title": "Изменение пароля",
@@ -3231,6 +3270,87 @@
         ]
       }
     },
+    "filename": "shower/apps/account/rest/v1/api.py",
+    "groupTitle": "Пользователь"
+  },
+  {
+    "type": "post",
+    "url": "accounts/account/add/remove/schedule/",
+    "title": "Запрос на удаление пользователя",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"project\": \"1\",\n    \"store\": \"0\",\n    \"expires_date\": \"2022-07-21\",\n    \"remove_date\": \"2022-07-22\"\n}",
+          "type": "json"
+        }
+      ],
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "project",
+            "description": "<p>Проект, <code>0</code> - Water, <code>1</code> - Shower</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "store",
+            "description": "<p>Магазин, <code>0</code> - Apple, <code>1</code> - Google, <code>2</code> - Robokassa</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "expires_date",
+            "description": "<p>Дата завершения подписки</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "remove_date",
+            "description": "<p>Дата удаления пользователя</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n    \"project\": \"1\",\n    \"store\": \"0\",\n    \"expires_date\": \"2022-07-21\",\n    \"remove_date\": null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>User Bearer Token.</p>"
+          }
+        ]
+      }
+    },
+    "permission": [
+      {
+        "name": "User",
+        "title": "User access rights needed.",
+        "description": "<p>Permission is granted to modify user objects.</p>"
+      }
+    ],
+    "name": "schedule_user_remove",
+    "group": "Пользователь",
+    "description": "<p>Если у пользователя нет задачи на удаление и ответ сервера <code>400</code>, у пользователя есть активная подписка черезе Apple или Google</p>",
     "filename": "shower/apps/account/rest/v1/api.py",
     "groupTitle": "Пользователь"
   },
