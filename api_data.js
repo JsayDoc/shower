@@ -3534,7 +3534,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"check_email\": false,\n    \"check_full_info\": false,\n    \"course\": {\n        \"missed\": 0,\n        \"end\": 28\n    }\n}",
+          "content": "{\n    \"check_email\": false,\n    \"check_full_info\": false,\n    \"course\": {\n        \"missed\": 0,\n        \"end\": 28\n    },\n    \"remove_date\": null\n}",
           "type": "json"
         }
       ],
@@ -3574,6 +3574,13 @@ define({ "api": [
             "optional": false,
             "field": "check_full_info",
             "description": "<p>Статус данных пользователя <code>True</code> - необходима проверка, <code>False</code> - проверка не требуется</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "remove_date",
+            "description": "<p>Дата удаления пользователя</p>"
           }
         ]
       }
