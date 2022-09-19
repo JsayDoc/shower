@@ -2515,7 +2515,46 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "billing/get/subscription/",
+    "url": "billing/cancel/robokassa/subscription/",
+    "title": "Отмена подписки на Robokassa",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"message\": \"Done\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>User Bearer Token.</p>"
+          }
+        ]
+      }
+    },
+    "permission": [
+      {
+        "name": "User",
+        "title": "User access rights needed.",
+        "description": "<p>Permission is granted to modify user objects.</p>"
+      }
+    ],
+    "name": "cancel_robokassa_subscription",
+    "group": "Подписки",
+    "filename": "shower/apps/billing/rest/v1/api.py",
+    "groupTitle": "Подписки"
+  },
+  {
+    "type": "post",
+    "url": "billing/subscription/status/",
     "title": "Статус подписки",
     "success": {
       "examples": [
@@ -3534,12 +3573,54 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"check_email\": false,\n    \"check_full_info\": false,\n    \"course\": {\n        \"missed\": 0,\n        \"end\": 28\n    },\n    \"remove_date\": null\n}",
+          "content": "{\n    \"billing\": true,\n    \"subscription\": {\n        \"expiry_date\": 1663748582,\n        \"status\": true,\n        \"method\": \"2\",\n        \"type\": \"subscription.yearly\",\n        \"renewal\": true\n    },\n    \"check_email\": false,\n    \"check_full_info\": false,\n    \"course\": {\n        \"missed\": 0,\n        \"end\": 28\n    },\n    \"remove_date\": null\n}",
           "type": "json"
         }
       ],
       "fields": {
         "Response": [
+          {
+            "group": "Response",
+            "type": "Object",
+            "optional": false,
+            "field": "subscription",
+            "description": "<p>Информация о подписке</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Number",
+            "optional": false,
+            "field": "subscription.expiry_date",
+            "description": "<p>Дата окончания подписки в Unixtime</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "subscription.status",
+            "description": "<p>Есть подписка <code>True</code> - Да, <code>False</code> - Нет</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "subscription.method",
+            "description": "<p>Способ оплаты <code>null</code> - Пусто, <code>0</code> - Apple, <code>1</code> - Google, <code>2</code> - Robokassa</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "subscription.type",
+            "description": "<p>Тип подписки <code>subscription.monthly, subscription.quarterly, subscription.semiannual, subscription.yearly</code></p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "subscription.renewal",
+            "description": "<p>Статус автопродления подписки (для Robokassa)</p>"
+          },
           {
             "group": "Response",
             "type": "Object",
@@ -3560,6 +3641,13 @@ define({ "api": [
             "optional": false,
             "field": "course.end",
             "description": "<p>Количество дней до завершения</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "billing",
+            "description": "<p>Статус подписки <code>True</code> - Активна, <code>False</code> - Просроченна</p>"
           },
           {
             "group": "Response",
