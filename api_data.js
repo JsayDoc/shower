@@ -3573,7 +3573,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"billing\": true,\n    \"subscription\": {\n        \"expiry_date\": 1663748582,\n        \"status\": true,\n        \"method\": \"2\",\n        \"type\": \"subscription.yearly\",\n        \"renewal\": true\n    },\n    \"check_email\": false,\n    \"check_full_info\": false,\n    \"course\": {\n        \"missed\": 0,\n        \"end\": 28\n    },\n    \"remove_date\": null\n}",
+          "content": "{\n    \"billing\": true,\n    \"subscription\": {\n        \"expiry_date\": 1663748582,\n        \"status\": true,\n        \"method\": \"2\",\n        \"type\": \"subscription.yearly\",\n        \"renewal\": true\n    },\n    \"maintenance\": true,\n    \"maintenance_title\": \"Заголовок технических работ\",\n    \"maintenance_text\": \"Текст технических работ\",\n    \"check_email\": false,\n    \"check_full_info\": false,\n    \"course\": {\n        \"missed\": 0,\n        \"end\": 28\n    },\n    \"remove_date\": null\n}",
           "type": "json"
         }
       ],
@@ -3669,6 +3669,27 @@ define({ "api": [
             "optional": false,
             "field": "remove_date",
             "description": "<p>Дата удаления пользователя</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "maintenance",
+            "description": "<p>Технические работы <code>True</code> - Да, <code>False</code> - Нет</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "maintenance_title",
+            "description": "<p>Заголовок технических работ</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "maintenance_text",
+            "description": "<p>Текст технических работ</p>"
           }
         ]
       }
