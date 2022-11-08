@@ -601,7 +601,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"last_achievement\": {\n        {\n        \"achievement\": {\n            \"achievement_type\": \"daily_active\",\n            \"image\": null,\n            \"title\": \"Охотник на простуду\",\n            \"slug\": \"oxotnik-na-prostudu\",\n            \"duration\": 1,\n            \"description\": \"\",\n            \"text\": \"Bla Bla\",\n            \"name\": \"рассказать друзьям\",\n            \"repeat\": true,\n            \"day\": 0\n        },\n        \"progress\": 1,\n        \"completed\": true,\n        \"complete_date\": \"2022-01-25T15:40:16Z\",\n        \"viewed\": false,\n        \"version\": 1\n        \"users_percent\": 60\n    }\n    },\n    \"daily_active\": [\n        {\n            \"achievement\": {\n                \"achievement_type\": \"daily_active\",\n                \"image\": null,\n                \"title\": \"Охотник на простуду\",\n                \"slug\": \"oxotnik-na-prostudu\",\n                \"duration\": 1,\n                \"description\": \"\",\n                \"text\": \"Bla Bla\",\n                \"name\": \"рассказать друзьям\",\n                \"repeat\": true,\n                \"day\": 0\n            },\n            \"progress\": 1,\n            \"completed\": true,\n            \"complete_date\": \"2022-01-25T15:40:16Z\",\n            \"viewed\": false,\n            \"version\": 1\n            \"users_percent\": 60\n        },\n        {\n            \"achievement\": {\n                \"achievement_type\": \"daily_active\",\n                \"image\": null,\n                \"title\": \"Истребитель ванных чудовищ\",\n                \"slug\": \"istrebitel-vannix-chudovish\",\n                \"duration\": 1,\n                \"description\": \"\",\n                \"text\": \"Bla Bla\",\n                \"name\": \"рассказать друзьям\",\n                \"repeat\": true,\n                \"day\": 0\n            }\n        }\n    ],\n    \"wellness_fountain\": [],\n    \"wasted_water\": [\n        {\n            \"achievement\": {\n                \"achievement_type\": \"wasted_water\",\n                \"image\": null,\n                \"title\": \"Вы встали на мокрую дорожку.\",\n                \"slug\": \"vi-vstali-na-mokri-put\",\n                \"duration\": 1,\n                \"description\": \"\",\n                \"text\": \"Bla Bla\",\n                \"name\": \"рассказать друзьям\",\n                \"repeat\": true,\n                \"day\": 0\n            },\n            \"progress\": 30,\n            \"completed\": true,\n            \"complete_date\": \"2022-01-25T15:41:23Z\",\n            \"viewed\": false,\n            \"version\": 1\n            \"users_percent\": 60\n        },\n        {\n            \"achievement\": {\n                \"achievement_type\": \"wasted_water\",\n                \"image\": null,\n                \"title\": \"Человек- Водопад\",\n                \"slug\": \"chelovek-bodapad\",\n                \"duration\": 1,\n                \"description\": \"\",\n                \"text\": \"Bla Bla\",\n                \"name\": \"рассказать друзьям\",\n                \"repeat\": true,\n                \"day\": 0\n            }\n        }\n    ]\n}",
+          "content": "{\n    \"last_achievement\": {\n        {\n        \"achievement\": {\n            \"achievement_type\": \"daily_active\",\n            \"image\": null,\n            \"title\": \"Охотник на простуду\",\n            \"slug\": \"oxotnik-na-prostudu\",\n            \"duration\": 1,\n            \"description\": \"\",\n            \"text\": \"Bla Bla\",\n            \"name\": \"рассказать друзьям\",\n            \"repeat\": true,\n            \"day\": 0\n        },\n        \"progress\": 1,\n        \"completed\": true,\n        \"complete_date\": \"2022-01-25T15:40:16Z\",\n        \"viewed\": false,\n        \"version\": 1\n        \"users_percent\": 60\n    }\n    },\n    \"daily_active\": [\n        {\n            \"achievement\": {\n                \"users_percent\": 50,\n                \"achievement_type\": \"daily_active\",\n                \"image\": null,\n                \"title\": \"Охотник на простуду\",\n                \"slug\": \"oxotnik-na-prostudu\",\n                \"duration\": 1,\n                \"description\": \"\",\n                \"text\": \"Bla Bla\",\n                \"name\": \"рассказать друзьям\",\n                \"repeat\": true,\n                \"day\": 0\n            },\n            \"progress\": 1,\n            \"completed\": true,\n            \"complete_date\": \"2022-01-25T15:40:16Z\",\n            \"viewed\": false,\n            \"version\": 1\n            \"users_percent\": 60\n        },\n        {\n            \"achievement\": {\n                \"users_percent\": 50,\n                \"achievement_type\": \"daily_active\",\n                \"image\": null,\n                \"title\": \"Истребитель ванных чудовищ\",\n                \"slug\": \"istrebitel-vannix-chudovish\",\n                \"duration\": 1,\n                \"description\": \"\",\n                \"text\": \"Bla Bla\",\n                \"name\": \"рассказать друзьям\",\n                \"repeat\": true,\n                \"day\": 0\n            }\n        }\n    ],\n    \"wellness_fountain\": [],\n    \"wasted_water\": [\n        {\n            \"achievement\": {\n                \"users_percent\": 50,\n                \"achievement_type\": \"wasted_water\",\n                \"image\": null,\n                \"title\": \"Вы встали на мокрую дорожку.\",\n                \"slug\": \"vi-vstali-na-mokri-put\",\n                \"duration\": 1,\n                \"description\": \"\",\n                \"text\": \"Bla Bla\",\n                \"name\": \"рассказать друзьям\",\n                \"repeat\": true,\n                \"day\": 0\n            },\n            \"progress\": 30,\n            \"completed\": true,\n            \"complete_date\": \"2022-01-25T15:41:23Z\",\n            \"viewed\": false,\n            \"version\": 1\n            \"users_percent\": 60\n        },\n        {\n            \"achievement\": {\n                \"users_percent\": 50,\n                \"achievement_type\": \"wasted_water\",\n                \"image\": null,\n                \"title\": \"Человек- Водопад\",\n                \"slug\": \"chelovek-bodapad\",\n                \"duration\": 1,\n                \"description\": \"\",\n                \"text\": \"Bla Bla\",\n                \"name\": \"рассказать друзьям\",\n                \"repeat\": true,\n                \"day\": 0\n            }\n        }\n    ]\n}",
           "type": "json"
         }
       ],
@@ -676,6 +676,13 @@ define({ "api": [
             "optional": false,
             "field": "last_achievement.achievement",
             "description": "<p>Достижения</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "last_achievement.achievement.users_percent",
+            "description": "<p>процент выполнивших</p>"
           },
           {
             "group": "Response",
@@ -807,6 +814,13 @@ define({ "api": [
             "group": "Response",
             "type": "String",
             "optional": false,
+            "field": "daily_active.achievement.users_percent",
+            "description": "<p>процент выполнивших</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
             "field": "daily_active.achievement.achievement_type",
             "description": "<p>Тип достижения</p>"
           },
@@ -928,6 +942,13 @@ define({ "api": [
             "optional": false,
             "field": "wellness_fountain.achievement",
             "description": "<p>Достижения</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "wellness_fountain.achievement.users_percent",
+            "description": "<p>процент выполнивших</p>"
           },
           {
             "group": "Response",
@@ -1059,6 +1080,13 @@ define({ "api": [
             "group": "Response",
             "type": "String",
             "optional": false,
+            "field": "wasted_water.achievement.users_percent",
+            "description": "<p>процент выполнивших</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
             "field": "wasted_water.achievement.achievement_type",
             "description": "<p>Тип достижения</p>"
           },
@@ -1180,6 +1208,13 @@ define({ "api": [
             "optional": false,
             "field": "single_achievements.achievement",
             "description": "<p>Достижения</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "single_achievements.achievement.users_percent",
+            "description": "<p>процент выполнивших</p>"
           },
           {
             "group": "Response",
