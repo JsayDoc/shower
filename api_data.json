@@ -1637,6 +1637,112 @@
   },
   {
     "type": "post",
+    "url": "history/user/mood/",
+    "title": "История настроений",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"data\": {\n        \"1\": null,\n        \"2\": null,\n        \"3\": null,\n        \"4\": null\n    },\n    \"percents\": [\n        {\n            \"type\": \"0\",\n            \"percentage\": 100\n        },\n        {\n            \"type\": \"1\",\n            \"percentage\": 0\n        },\n        {\n            \"type\": \"2\",\n            \"percentage\": 0\n        },\n        {\n            \"type\": \"3\",\n            \"percentage\": 0\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ],
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "Object",
+            "optional": false,
+            "field": "data",
+            "description": "<p>История настроения</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "data.1",
+            "description": "<p>дни текущей недели, дни текущего месяца, месяцы текущего года. <code>null</code> - нулевое значение, <code>&quot;0&quot;</code> - Плохое настроение, <code>&quot;1&quot;</code> - Нейтральное настроение, <code>&quot;2&quot;</code> - Хорошее настроение, <code>&quot;3&quot;</code> - Отличное настроение</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Object",
+            "optional": false,
+            "field": "percents",
+            "description": "<p>Процент настроений</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "percents.type",
+            "description": "<p>Тип настроения, <code>&quot;0&quot;</code> - Плохое настроение, <code>&quot;1&quot;</code> - Нейтральное настроение, <code>&quot;2&quot;</code> - Хорошее настроение, <code>&quot;3&quot;</code> - Отличное настроение</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Number",
+            "optional": false,
+            "field": "percents.percentage",
+            "description": "<p>Процент</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>User Bearer Token.</p>"
+          }
+        ]
+      }
+    },
+    "permission": [
+      {
+        "name": "User",
+        "title": "User access rights needed.",
+        "description": "<p>Permission is granted to modify user objects.</p>"
+      }
+    ],
+    "name": "mood_history",
+    "group": "История",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "YYYY-MM-DD"
+            ],
+            "optional": false,
+            "field": "date",
+            "description": "<p>Текущая дата</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "week",
+              "month",
+              "year"
+            ],
+            "optional": false,
+            "field": "type",
+            "description": "<p>Неделя - <code>week</code>, Месяц - <code>month</code>, Год - <code>year</code></p>"
+          }
+        ]
+      }
+    },
+    "filename": "shower/apps/history/rest/v1/api.py",
+    "groupTitle": "История"
+  },
+  {
+    "type": "post",
     "url": "notifications/fcm_token/",
     "title": "FCM Token",
     "success": {
