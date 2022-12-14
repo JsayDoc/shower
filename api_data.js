@@ -1450,7 +1450,7 @@ define({ "api": [
       "examples": [
         {
           "title": "1.Success-Response:",
-          "content": "{\n\"daily_norm\": {\n    \"notify\": true\n},\n\"new_achievement\": [\n        {\n            \"achievement\": {\n                \"achievement_type\": \"wasted_water\",\n                \"image\": null,\n                \"title\": \"Сколько воды утекло...\",\n                \"slug\": \"skolko-vodi-yteklo\",\n                \"duration\": 360,\n                \"description\": \"360л воды - в копилку!\",\n                \"text\": \"А когда то всё только начиналось. С тех пор столько воды утекло...и не зря!\",\n                \"name\": \"Потрачено 360л в душе! Могу повторить\",\n                \"repeat\": true\n            },\n            \"progress\": 360,\n            \"users_percent\": 100,\n            \"completed\": true,\n            \"complete_date\": \"2022-07-10T19:02:20.263791Z\",\n            \"viewed\": false,\n            \"version\": 8\n        },\n        {\n            \"achievement\": {\n                \"achievement_type\": \"wellness_fountain\",\n                \"image\": null,\n                \"title\": \"Искатель здоровья\",\n                \"slug\": \"iskatel-zdorovya\",\n                \"duration\": 28,\n                \"description\": \"Следующие 28 сеансов регулярно, не больше 3х пропусков\",\n                \"text\": \"Здоровье дороже золота - легко потерять и тяжело найти. Давайте же его беречь.\",\n                \"name\": \"Оздоровительный курс контрастного душа JSay Shower пройден мной еще раз!\",\n                \"repeat\": true\n            },\n            \"progress\": 28,\n            \"users_percent\": 100,\n            \"completed\": true,\n            \"complete_date\": \"2022-07-10T19:02:20.297602Z\",\n            \"viewed\": false,\n            \"version\": 3\n        }\n    ]\n}",
+          "content": "{\n\"daily_norm\": {\n    \"notify\": true\n},\n\"mood\": false,\n\"new_achievement\": [\n        {\n            \"achievement\": {\n                \"achievement_type\": \"wasted_water\",\n                \"image\": null,\n                \"title\": \"Сколько воды утекло...\",\n                \"slug\": \"skolko-vodi-yteklo\",\n                \"duration\": 360,\n                \"description\": \"360л воды - в копилку!\",\n                \"text\": \"А когда то всё только начиналось. С тех пор столько воды утекло...и не зря!\",\n                \"name\": \"Потрачено 360л в душе! Могу повторить\",\n                \"repeat\": true\n            },\n            \"progress\": 360,\n            \"users_percent\": 100,\n            \"completed\": true,\n            \"complete_date\": \"2022-07-10T19:02:20.263791Z\",\n            \"viewed\": false,\n            \"version\": 8\n        },\n        {\n            \"achievement\": {\n                \"achievement_type\": \"wellness_fountain\",\n                \"image\": null,\n                \"title\": \"Искатель здоровья\",\n                \"slug\": \"iskatel-zdorovya\",\n                \"duration\": 28,\n                \"description\": \"Следующие 28 сеансов регулярно, не больше 3х пропусков\",\n                \"text\": \"Здоровье дороже золота - легко потерять и тяжело найти. Давайте же его беречь.\",\n                \"name\": \"Оздоровительный курс контрастного душа JSay Shower пройден мной еще раз!\",\n                \"repeat\": true\n            },\n            \"progress\": 28,\n            \"users_percent\": 100,\n            \"completed\": true,\n            \"complete_date\": \"2022-07-10T19:02:20.297602Z\",\n            \"viewed\": false,\n            \"version\": 3\n        }\n    ]\n}",
           "type": "json"
         }
       ],
@@ -1476,6 +1476,13 @@ define({ "api": [
             "optional": false,
             "field": "daily_norm.date",
             "description": "<p>День выполнения</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "mood",
+            "description": "<p>Настроение <code>True</code> - можно добавить, <code>False</code> - нельзя добавлять, уже существует</p>"
           }
         ]
       }
