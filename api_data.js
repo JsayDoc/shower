@@ -1523,6 +1523,94 @@ define({ "api": [
     "groupTitle": "Душ_и_достижения"
   },
   {
+    "type": "post",
+    "url": "history/add/user/mood/",
+    "title": "Добавить настроение",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"message\": \"Настроение успешно добавлено\"\n}",
+          "type": "json"
+        }
+      ],
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Настроение успешно добавлено</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n    \"message\": \"Настроение за текущий день уже существует\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>User Bearer Token.</p>"
+          }
+        ]
+      }
+    },
+    "permission": [
+      {
+        "name": "User",
+        "title": "User access rights needed.",
+        "description": "<p>Permission is granted to modify user objects.</p>"
+      }
+    ],
+    "name": "add_mood_history",
+    "group": "История",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "YYYY-MM-DD"
+            ],
+            "optional": false,
+            "field": "date",
+            "description": "<p>Текущая дата</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "0",
+              "1",
+              "2",
+              "3"
+            ],
+            "optional": false,
+            "field": "type",
+            "description": "<p>Тип настроения <code>&quot;0&quot;</code> - Плохое настроение, <code>&quot;1&quot;</code> - Нейтральное настроение, <code>&quot;2&quot;</code> - Хорошее настроение, <code>&quot;3&quot;</code> - Отличное настроение</p>"
+          }
+        ]
+      }
+    },
+    "filename": "shower/apps/history/rest/v1/api.py",
+    "groupTitle": "История"
+  },
+  {
     "type": "get",
     "url": "history/data/",
     "title": "История принятого душа",
