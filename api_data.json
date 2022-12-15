@@ -1303,8 +1303,8 @@
   },
   {
     "type": "post",
-    "url": "accounts/dj_booth/",
-    "title": "Кабинка ди-джея",
+    "url": "profile/:url/",
+    "title": "Создать одиночное достижение",
     "success": {
       "examples": [
         {
@@ -1439,6 +1439,7 @@
     ],
     "name": "single_achievement",
     "group": "Душ_и_достижения",
+    "description": "<p>Варианты <code>:url</code>, <code>invitation</code> - Приглашение, <code>reviewer</code> - Рецензент, <code>first_chat</code> - Первое знакомство, <code>push_notification</code> - Предупрежден-вооружен, <code>dj_booth</code> - Кабинка ди-джея</p>",
     "filename": "shower/apps/uprofile/rest/v1/api.py",
     "groupTitle": "Душ_и_достижения"
   },
