@@ -601,7 +601,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"last_achievement\": {\n        {\n        \"achievement\": {\n            \"achievement_type\": \"daily_active\",\n            \"image\": null,\n            \"title\": \"Охотник на простуду\",\n            \"slug\": \"oxotnik-na-prostudu\",\n            \"duration\": 1,\n            \"description\": \"\",\n            \"text\": \"Bla Bla\",\n            \"name\": \"рассказать друзьям\",\n            \"repeat\": true,\n            \"day\": 0\n        },\n        \"progress\": 1,\n        \"completed\": true,\n        \"complete_date\": \"2022-01-25T15:40:16Z\",\n        \"viewed\": false,\n        \"version\": 1\n        \"users_percent\": 60\n    }\n    },\n    \"daily_active\": [\n        {\n            \"achievement\": {\n                \"users_percent\": 50,\n                \"achievement_type\": \"daily_active\",\n                \"image\": null,\n                \"title\": \"Охотник на простуду\",\n                \"slug\": \"oxotnik-na-prostudu\",\n                \"duration\": 1,\n                \"description\": \"\",\n                \"text\": \"Bla Bla\",\n                \"name\": \"рассказать друзьям\",\n                \"repeat\": true,\n                \"day\": 0\n            },\n            \"progress\": 1,\n            \"completed\": true,\n            \"complete_date\": \"2022-01-25T15:40:16Z\",\n            \"viewed\": false,\n            \"version\": 1\n            \"users_percent\": 60\n        },\n        {\n            \"achievement\": {\n                \"users_percent\": 50,\n                \"achievement_type\": \"daily_active\",\n                \"image\": null,\n                \"title\": \"Истребитель ванных чудовищ\",\n                \"slug\": \"istrebitel-vannix-chudovish\",\n                \"duration\": 1,\n                \"description\": \"\",\n                \"text\": \"Bla Bla\",\n                \"name\": \"рассказать друзьям\",\n                \"repeat\": true,\n                \"day\": 0\n            }\n        }\n    ],\n    \"wellness_fountain\": [],\n    \"wasted_water\": [\n        {\n            \"achievement\": {\n                \"users_percent\": 50,\n                \"achievement_type\": \"wasted_water\",\n                \"image\": null,\n                \"title\": \"Вы встали на мокрую дорожку.\",\n                \"slug\": \"vi-vstali-na-mokri-put\",\n                \"duration\": 1,\n                \"description\": \"\",\n                \"text\": \"Bla Bla\",\n                \"name\": \"рассказать друзьям\",\n                \"repeat\": true,\n                \"day\": 0\n            },\n            \"progress\": 30,\n            \"completed\": true,\n            \"complete_date\": \"2022-01-25T15:41:23Z\",\n            \"viewed\": false,\n            \"version\": 1\n            \"users_percent\": 60\n        },\n        {\n            \"achievement\": {\n                \"users_percent\": 50,\n                \"achievement_type\": \"wasted_water\",\n                \"image\": null,\n                \"title\": \"Человек- Водопад\",\n                \"slug\": \"chelovek-bodapad\",\n                \"duration\": 1,\n                \"description\": \"\",\n                \"text\": \"Bla Bla\",\n                \"name\": \"рассказать друзьям\",\n                \"repeat\": true,\n                \"day\": 0\n            }\n        }\n    ]\n}",
+          "content": "{\n    \"last_achievement\": {\n        {\n        \"achievement\": {\n            \"achievement_type\": \"daily_active\",\n            \"image\": null,\n            \"image_watch\": null,\n            \"title\": \"Охотник на простуду\",\n            \"slug\": \"oxotnik-na-prostudu\",\n            \"duration\": 1,\n            \"description\": \"\",\n            \"text\": \"Bla Bla\",\n            \"name\": \"рассказать друзьям\",\n            \"repeat\": true,\n            \"day\": 0\n        },\n        \"progress\": 1,\n        \"completed\": true,\n        \"complete_date\": \"2022-01-25T15:40:16Z\",\n        \"viewed\": false,\n        \"version\": 1\n        \"users_percent\": 60\n    }\n    },\n    \"daily_active\": [\n        {\n            \"achievement\": {\n                \"users_percent\": 50,\n                \"achievement_type\": \"daily_active\",\n                \"image\": null,\n                \"image_watch\": null,\n                \"title\": \"Охотник на простуду\",\n                \"slug\": \"oxotnik-na-prostudu\",\n                \"duration\": 1,\n                \"description\": \"\",\n                \"text\": \"Bla Bla\",\n                \"name\": \"рассказать друзьям\",\n                \"repeat\": true,\n                \"day\": 0\n            },\n            \"progress\": 1,\n            \"completed\": true,\n            \"complete_date\": \"2022-01-25T15:40:16Z\",\n            \"viewed\": false,\n            \"version\": 1\n            \"users_percent\": 60\n        },\n        {\n            \"achievement\": {\n                \"users_percent\": 50,\n                \"achievement_type\": \"daily_active\",\n                \"image\": null,\n                \"image_watch\": null,\n                \"title\": \"Истребитель ванных чудовищ\",\n                \"slug\": \"istrebitel-vannix-chudovish\",\n                \"duration\": 1,\n                \"description\": \"\",\n                \"text\": \"Bla Bla\",\n                \"name\": \"рассказать друзьям\",\n                \"repeat\": true,\n                \"day\": 0\n            }\n        }\n    ],\n    \"wellness_fountain\": [],\n    \"wasted_water\": [\n        {\n            \"achievement\": {\n                \"users_percent\": 50,\n                \"achievement_type\": \"wasted_water\",\n                \"image\": null,\n                \"image_watch\": null,\n                \"title\": \"Вы встали на мокрую дорожку.\",\n                \"slug\": \"vi-vstali-na-mokri-put\",\n                \"duration\": 1,\n                \"description\": \"\",\n                \"text\": \"Bla Bla\",\n                \"name\": \"рассказать друзьям\",\n                \"repeat\": true,\n                \"day\": 0\n            },\n            \"progress\": 30,\n            \"completed\": true,\n            \"complete_date\": \"2022-01-25T15:41:23Z\",\n            \"viewed\": false,\n            \"version\": 1\n            \"users_percent\": 60\n        },\n        {\n            \"achievement\": {\n                \"users_percent\": 50,\n                \"achievement_type\": \"wasted_water\",\n                \"image\": null,\n                \"image_watch\": null,\n                \"title\": \"Человек- Водопад\",\n                \"slug\": \"chelovek-bodapad\",\n                \"duration\": 1,\n                \"description\": \"\",\n                \"text\": \"Bla Bla\",\n                \"name\": \"рассказать друзьям\",\n                \"repeat\": true,\n                \"day\": 0\n            }\n        }\n    ]\n}",
           "type": "json"
         }
       ],
@@ -697,6 +697,13 @@
             "optional": false,
             "field": "last_achievement.achievement.image",
             "description": "<p>Иконка</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "last_achievement.achievement.image_watch",
+            "description": "<p>Иконка часов</p>"
           },
           {
             "group": "Response",
@@ -835,6 +842,13 @@
             "group": "Response",
             "type": "String",
             "optional": false,
+            "field": "daily_active.achievement.image_watch",
+            "description": "<p>Иконка часов</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
             "field": "daily_active.achievement.title",
             "description": "<p>Заголовок</p>"
           },
@@ -963,6 +977,13 @@
             "optional": false,
             "field": "wellness_fountain.achievement.image",
             "description": "<p>Иконка</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "wellness_fountain.achievement.image_watch",
+            "description": "<p>Иконка часов</p>"
           },
           {
             "group": "Response",
@@ -1101,6 +1122,13 @@
             "group": "Response",
             "type": "String",
             "optional": false,
+            "field": "wasted_water.achievement.image_watch",
+            "description": "<p>Иконка часов</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
             "field": "wasted_water.achievement.title",
             "description": "<p>Заголовок</p>"
           },
@@ -1229,6 +1257,13 @@
             "optional": false,
             "field": "single_achievements.achievement.image",
             "description": "<p>Иконка</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "single_achievements.achievement.image_watch",
+            "description": "<p>Иконка часов</p>"
           },
           {
             "group": "Response",
@@ -3981,7 +4016,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"course\": {\n        \"image\": \"link\",\n        \"title\": \"curse\",\n        \"slug\": \"asdasda\",\n        \"duration\": 28,\n        \"may_miss\": 3,\n        \"description\": \"akfldkaldska\",\n        \"motivational_messages\": \"asfsghsdgf\",\n        \"percent\": 10\n    },\n    \"auto_settings\": true,\n    \"missed\": 1,\n    \"history\": [\n        {\n            \"date\": \"2022-02-16\",\n            \"missed\": false,\n            \"weekday\": 4\n        }\n    ],\n    \"version\": 0,\n    \"updated\": \"2022-02-16\"\n}",
+          "content": "{\n    \"course\": {\n        \"image\": null,\n        \"image_watch\": null,\n        \"title\": \"curse\",\n        \"slug\": \"asdasda\",\n        \"duration\": 28,\n        \"may_miss\": 3,\n        \"description\": \"akfldkaldska\",\n        \"motivational_messages\": \"asfsghsdgf\",\n        \"percent\": 10\n    },\n    \"auto_settings\": true,\n    \"missed\": 1,\n    \"history\": [\n        {\n            \"date\": \"2022-02-16\",\n            \"missed\": false,\n            \"weekday\": 4\n        }\n    ],\n    \"version\": 0,\n    \"updated\": \"2022-02-16\"\n}",
           "type": "json"
         }
       ],
@@ -4000,6 +4035,13 @@
             "optional": false,
             "field": "course.image",
             "description": "<p>Иконка</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "course.image_watch",
+            "description": "<p>Иконка часов</p>"
           },
           {
             "group": "Response",
@@ -4199,6 +4241,13 @@
             "group": "Response",
             "type": "String",
             "optional": false,
+            "field": "course.image_watch",
+            "description": "<p>Иконка часов</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
             "field": "course.title",
             "description": "<p>Заголовок</p>"
           },
@@ -4362,6 +4411,13 @@
             "optional": false,
             "field": "course.image",
             "description": "<p>Иконка</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "course.image_watch",
+            "description": "<p>Иконка часов</p>"
           },
           {
             "group": "Response",
