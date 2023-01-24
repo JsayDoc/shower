@@ -2467,6 +2467,43 @@ define({ "api": [
     "groupTitle": "Основные"
   },
   {
+    "type": "get",
+    "url": "core/get/voice/prompts/",
+    "title": "Голосовые подсказки",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "[\n    {\n        \"title\": \"Пример 1\",\n        \"file\": \"https://dev.api.water.jsay.ru/media/core/voice/prompt/1.mp4\"\n    },\n    {\n        \"title\": \"Пример 2\",\n        \"file\": \"https://dev.api.water.jsay.ru/media/core/voice/prompt/2.mp4\"\n    }\n]",
+          "type": "json"
+        }
+      ],
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "title",
+            "description": "<p>Название</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "file",
+            "description": "<p>Ссылка на файл</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "name": "get_voice_promts",
+    "group": "Основные",
+    "filename": "shower/apps/core/rest/v1/api.py",
+    "groupTitle": "Основные"
+  },
+  {
     "type": "post",
     "url": "feedback/add_feedback/",
     "title": "Добавить отзыв",
