@@ -612,7 +612,7 @@ define({ "api": [
             "type": "Object",
             "optional": false,
             "field": "last_achievement",
-            "description": "<p>Последняя достижения</p>"
+            "description": "<p>Последнее достижение</p>"
           },
           {
             "group": "Response",
@@ -2474,7 +2474,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "[\n    {\n        \"title\": \"Пример 1\",\n        \"file\": \"https://dev.api.water.jsay.ru/media/core/voice/prompt/1.mp4\"\n    },\n    {\n        \"title\": \"Пример 2\",\n        \"file\": \"https://dev.api.water.jsay.ru/media/core/voice/prompt/2.mp4\"\n    }\n]",
+          "content": "[\n    {\n        \"type\": \"0\",\n        \"category\": \"cool_water\",\n        \"voice_files\": [\n            {\n                \"title\": \"test\",\n                \"file\": \"https://example.com/media/core/voice/prompt/test.mp4\"\n            },\n            {\n                \"title\": \"test1\",\n                \"file\": \"https://example.com/media/core/voice/prompt/test1.mp4\"\n            }\n        ]\n    }\n]",
           "type": "json"
         }
       ],
@@ -2482,17 +2482,38 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "String",
+            "type": "Object",
             "optional": false,
-            "field": "title",
-            "description": "<p>Название</p>"
+            "field": "voice_files",
+            "description": "<p>Файлы</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "file",
+            "field": "voice_files.title",
+            "description": "<p>Название файла</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "voice_files.file",
             "description": "<p>Ссылка на файл</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "type",
+            "description": "<p>Тип файла, <code>0</code> - Мужской, <code>1</code> - Женский</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "category",
+            "description": "<p>Категория файла: <code>cool_water, hot_water, start_warm, end_session, shower_motivation</code></p>"
           }
         ]
       }
