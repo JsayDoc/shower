@@ -3903,12 +3903,152 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"billing\": true,\n    \"subscription\": {\n        \"expiry_date\": 1663748582,\n        \"status\": true,\n        \"method\": \"2\",\n        \"type\": \"subscription.yearly\",\n        \"renewal\": true\n    },\n    \"maintenance\": true,\n    \"maintenance_title\": \"Заголовок технических работ\",\n    \"maintenance_text\": \"Текст технических работ\",\n    \"check_email\": false,\n    \"check_full_info\": false,\n    \"course\": {\n        \"missed\": 0,\n        \"end\": 28\n    },\n    \"remove_date\": null\n}",
+          "content": "{\n    \"billing\": true,\n    \"subscription\": {\n        \"expiry_date\": 1663748582,\n        \"status\": true,\n        \"method\": \"2\",\n        \"type\": \"subscription.yearly\",\n        \"renewal\": true\n    },\n    \"maintenance\": true,\n    \"maintenance_title\": \"Заголовок технических работ\",\n    \"maintenance_text\": \"Текст технических работ\",\n    \"check_email\": false,\n    \"check_full_info\": false,\n    \"course\": {\n        \"missed\": 0,\n        \"end\": 28\n    },\n    \"remove_date\": null,\n    \"single_achievements\": [\n        {\n            \"achievement\": {\n                \"users_percent\": 50,\n                \"achievement_type\": \"reviewer\",\n                \"image\": null,\n                \"image_watch\": null,\n                \"title\": \"Ну как водичка?\",\n                \"slug\": \"nu-kak-vodichka\",\n                \"duration\": 1,\n                \"description\": \"Вы оставили отзыв о JSay Shower\",\n                \"text\": \"Без вашего экспертного мнения просто не обойтись! Мы серьезно.\",\n                \"name\": \"Мной оставлен отзыв о приложении JSay Shower!\",\n                \"repeat\": false\n            },\n            \"progress\": 22,\n            \"completed\": true,\n            \"users_percent\": 0,\n            \"complete_date\": \"2022-12-14T22:48:19Z\",\n            \"viewed\": false,\n            \"version\": 1\n        }\n    ]\n}",
           "type": "json"
         }
       ],
       "fields": {
         "Response": [
+          {
+            "group": "Response",
+            "type": "Object",
+            "optional": false,
+            "field": "single_achievements",
+            "description": "<p>Одиночные достижения</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "single_achievements.progress",
+            "description": "<p>Прогресс</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "single_achievements.completed",
+            "description": "<p>Завершенный</p>"
+          },
+          {
+            "group": "Response",
+            "type": "DateTime",
+            "optional": false,
+            "field": "single_achievements.complete_date",
+            "description": "<p>дата завершенный</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "single_achievements.viewed",
+            "description": "<p>Посмотрен</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "single_achievements.version",
+            "description": "<p>Счетчик повторений</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Integer",
+            "optional": false,
+            "field": "single_achievements.users_percent",
+            "description": "<p>процент выполнивших</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Boolean",
+            "optional": false,
+            "field": "single_achievements.repeat",
+            "description": "<p>Повторяемы</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Number",
+            "optional": false,
+            "field": "single_achievements.day",
+            "description": "<p>День серии</p>"
+          },
+          {
+            "group": "Response",
+            "type": "Object",
+            "optional": false,
+            "field": "single_achievements.achievement",
+            "description": "<p>Достижения</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "single_achievements.achievement.users_percent",
+            "description": "<p>процент выполнивших</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "single_achievements.achievement.achievement_type",
+            "description": "<p>Тип достижения</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "single_achievements.achievement.image",
+            "description": "<p>Иконка</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "single_achievements.achievement.image_watch",
+            "description": "<p>Иконка часов</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "single_achievements.achievement.title",
+            "description": "<p>Заголовок</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "single_achievements.achievement.slug",
+            "description": "<p>Алиас</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "single_achievements.achievement.duration",
+            "description": "<p>Продолжительность или количество</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "single_achievements.achievement.description",
+            "description": "<p>Описание</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "single_achievements.achievement.text",
+            "description": "<p>текст</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "single_achievements.achievement.name",
+            "description": "<p>заголовок для рассказать друзьям</p>"
+          },
           {
             "group": "Response",
             "type": "Object",
