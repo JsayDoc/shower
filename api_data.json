@@ -2417,6 +2417,50 @@
   },
   {
     "type": "get",
+    "url": "core/get/music/files/",
+    "title": "Музыка в приложении",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "[\n    {\n        \"music_files\": [\n            {\n                \"title\": \"TEST\",\n                \"file\": \"http://127.0.0.1:8000/media/core/music/test.mp3\"\n            },\n            {\n                \"title\": \"TEST2\",\n                \"file\": \"http://127.0.0.1:8000/media/core/music/test2.mp3\"\n            }\n        ]\n    }\n]",
+          "type": "json"
+        }
+      ],
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "music_files",
+            "description": "<p>Файлы</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "music_files.title",
+            "description": "<p>Название файла</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "music_files.file",
+            "description": "<p>Ссылка на файл</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "name": "get_music_files",
+    "group": "Основные",
+    "filename": "shower/apps/core/rest/v1/api.py",
+    "groupTitle": "Основные"
+  },
+  {
+    "type": "get",
     "url": "core/legal_docs/",
     "title": "Правовые документы",
     "success": {
